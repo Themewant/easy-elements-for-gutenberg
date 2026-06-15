@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* Column editor-only styles */
+.wp-block-eelfg-column {
+  min-height: 60px;
+  position: relative;
+  transition: outline 100ms ease;
+}
+.wp-block-eelfg-column > .eelfg-column__inner {
+  min-height: 40px;
+}
+.wp-block-eelfg-column {
+  /* Width-label badge (e.g. "50%"). Hidden by default; shown on selection /
+   * hover / empty-state. Sits unobtrusively in the top-right. */
+}
+.wp-block-eelfg-column > .eelfg-column__width-label {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #7a7a7a;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1px 6px;
+  border-radius: 3px;
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease;
+  z-index: 2;
+}
+.wp-block-eelfg-column:hover > .eelfg-column__width-label, .wp-block-eelfg-column.is-selected > .eelfg-column__width-label, .wp-block-eelfg-column.has-child-selected > .eelfg-column__width-label, .wp-block-eelfg-column.is-empty > .eelfg-column__width-label {
+  opacity: 1;
+}
+.wp-block-eelfg-column {
+  /* Empty column — solid border + big "+" appender in the middle. */
+}
+.wp-block-eelfg-column.is-empty {
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  background: transparent;
+}
+.wp-block-eelfg-column.is-empty > .eelfg-column__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 8px;
+}
+.wp-block-eelfg-column.is-empty > .eelfg-column__inner .block-editor-button-block-appender {
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #8e8e8e;
+  box-shadow: none;
+  transition: color 120ms ease, transform 120ms ease;
+}
+.wp-block-eelfg-column.is-empty > .eelfg-column__inner .block-editor-button-block-appender:hover {
+  color: #a216ff;
+  transform: scale(1.08);
+}
+.wp-block-eelfg-column.is-empty > .eelfg-column__inner .block-editor-button-block-appender svg {
+  width: 22px;
+  height: 22px;
+}/*# sourceMappingURL=editor.css.map */

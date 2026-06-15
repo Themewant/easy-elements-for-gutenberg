@@ -1,0 +1,148 @@
+body.toplevel_page_easy-elements-for-gutenberg #wpcontent {
+    padding-left: 0 !important;
+}
+
+.menu-top.toplevel_page_easy-elements-for-gutenberg .wp-menu-image img {
+    height: 17px;
+    opacity: 1 !important;
+}
+
+#eelfg-dashboard {
+    .eelfg-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 64px;
+        padding: 0 16px;
+        overflow: hidden;
+
+        img {
+            height: 32px;
+            transition: height 0.2s;
+        }
+    }
+
+    // Shrink the logo when the sider is collapsed
+    .ant-layout-sider-collapsed .eelfg-logo {
+        padding: 0 8px;
+
+        img {
+            height: 24px;
+        }
+    }
+
+    .eelfg-options-content {
+        input[type=search] {
+            min-height: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.ant-notification {
+    top: 50px !important;
+}
+
+.eelfg-options-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.eelfg-block-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f2fa;
+    padding: 8px 12px;
+
+    .meta {
+        display: flex;
+        align-content: center;
+        gap: 10px;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        width: 60px;
+        height: 60px;
+        padding: 12px;
+        border-radius: 8px;
+        position: relative;
+        flex-direction: column;
+        img {
+            height: 30px;
+            width: 30px;
+        }
+        .eelfg-block-badge {
+            position: absolute;
+            left: 50%;
+            top: -4px;
+            background-color: #f2295b;
+            color: var(--easy-white-color);
+            border-radius: 36px;
+            font-size: 8px;
+            font-weight: 500;
+            transform: translateX(-50%);
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 4px 6px;
+            line-height: 100%;
+        }
+    }
+
+    .content {
+        align-content: center;
+
+        strong {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--easy-title-color);
+            line-height: 1.2;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+
+}
+
+.eelfg-options-content-header {
+    margin-bottom: 20px;
+}
+
+// editor
+[id^="inspector-box-control-"][id$="-heading"],
+.block-editor-block-inspector .components-base-control .components-base-control__label {
+    text-transform: capitalize;
+}
+
+.eshb-responsive-content [id^="inspector-box-control-"][id$="-heading"] {
+    display: none;
+}
+.toplevel_page_easy-elements-for-gutenberg {
+    input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week] {
+        padding: 0 12px;
+        min-height: auto;
+        &:focus {
+            outline: none;
+        }
+    }
+}   
+.ant-select {
+    input {
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+

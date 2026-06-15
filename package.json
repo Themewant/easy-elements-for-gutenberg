@@ -1,0 +1,19 @@
+{
+  "scripts": {
+      "start": "concurrently \"npm:start:main\" \"npm:start:postGrid\" \"npm:start:row\" \"npm:start:column\"",
+      "start:main": "wp-scripts start",
+      "start:postGrid": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/post-grid/src --output-path=includes/public/blocks/post-grid/build",
+      "start:row": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/layout-row/src --output-path=includes/public/blocks/layout-row/build",
+      "start:column": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/column/src --output-path=includes/public/blocks/column/build",
+      "build": "wp-scripts build",
+      "build:postGrid": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/post-grid/src --output-path=includes/public/blocks/post-grid/build",
+      "build:row": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/layout-row/src --output-path=includes/public/blocks/layout-row/build",
+      "build:column": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/column/src --output-path=includes/public/blocks/column/build"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^32.4.0",
+    "concurrently": "^9.1.2",
+    "@ant-design/icons": "^6.1.0",
+    "antd": "^6.1.4"
+  }
+}
