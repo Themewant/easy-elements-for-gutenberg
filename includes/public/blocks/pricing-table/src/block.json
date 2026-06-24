@@ -1,0 +1,152 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "easy-elements-for-gutenberg/pricing-table",
+	"version": "0.1.0",
+	"title": "Pricing Table",
+	"category": "easy-elements-for-gutenberg",
+	"description": "A configurable pricing table with features list, featured ribbon and call-to-action button.",
+	"keywords": [ "pricing", "pricing-table", "table", "plan", "price" ],
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"padding": [ "top", "bottom", "left", "right" ],
+			"margin": [ "top", "bottom", "left", "right" ]
+		},
+		"color": {
+			"background": true,
+			"text": false,
+			"gradients": true
+		}
+	},
+	"textdomain": "easy-elements-for-gutenberg",
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"attributes": {
+		"blockId": { "type": "string", "default": "" },
+		"skinStyle": { "type": "string", "default": "skin1" },
+
+		"title": { "type": "string", "default": "Basic Plan" },
+		"description": { "type": "string", "default": "" },
+		"onSale": { "type": "boolean", "default": false },
+		"regularPrice": { "type": "string", "default": "59" },
+		"salePrice": { "type": "string", "default": "49" },
+		"price": { "type": "string", "default": "59" },
+		"currency": { "type": "string", "default": "$" },
+		"currencyPlacement": { "type": "string", "default": "left" },
+		"period": { "type": "string", "default": "month" },
+		"separator": { "type": "string", "default": "/" },
+		"headerAlignment": { "type": "string", "default": "left" },
+
+		"featuresDescription": { "type": "string", "default": "" },
+		"features": {
+			"type": "array",
+			"default": [
+				{ "icon": "", "text": "99.9% Uptime Guarantee" },
+				{ "icon": "", "text": "Free SSL Certificate" },
+				{ "icon": "", "text": "24/7 Expert Support" },
+				{ "icon": "", "text": "One-Click WordPress Install" },
+				{ "icon": "", "text": "Unlimited Bandwidth" },
+				{ "icon": "", "text": "SSD Storage" },
+				{ "icon": "", "text": "Free Daily Backups" },
+				{ "icon": "", "text": "Enhanced Security" }
+			]
+		},
+		"featureIconStyle": { "type": "string", "default": "icon-only" },
+		"featureTextAlignment": { "type": "string", "default": "left" },
+		"featureIconBgColor": { "type": "string", "default": "" },
+		"featureIconBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"featureIconSize": { "type": "string", "default": "" },
+		"featureIconPadding": { "type": "object" },
+		"featureIconBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+
+		"isFeatured": { "type": "boolean", "default": false },
+		"ribbonStyle": { "type": "string", "default": "style1" },
+		"featuredText": { "type": "string", "default": "Featured" },
+		"ribbonAlignment": { "type": "string", "default": "right" },
+
+		"showButton": { "type": "boolean", "default": true },
+		"buttonText": { "type": "string", "default": "Choose Plan" },
+		"buttonSubtext": { "type": "string", "default": "No credit card required!" },
+		"buttonUrl": { "type": "string", "default": "#" },
+		"buttonTarget": { "type": "boolean", "default": false },
+		"buttonNofollow": { "type": "boolean", "default": false },
+		"buttonIcon": { "type": "string", "default": "" },
+		"buttonIconPosition": { "type": "string", "default": "after" },
+		"buttonPosition": { "type": "string", "default": "after_features" },
+		"btnAlignment": { "type": "string", "default": "left" },
+		"buttonFullWidth": { "type": "boolean", "default": false },
+
+		"titleColor": { "type": "string", "default": "" },
+		"titleHighlightColor": { "type": "string", "default": "" },
+		"titleTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"titleBgColor": { "type": "string", "default": "" },
+		"titleBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"titleBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+		"titlePadding": { "type": "object" },
+		"titleMargin": { "type": "object" },
+
+		"descriptionColor": { "type": "string", "default": "" },
+		"descriptionTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"descriptionBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"descriptionPadding": { "type": "object" },
+		"descriptionMargin": { "type": "object" },
+
+		"priceColor": { "type": "string", "default": "" },
+		"priceTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"priceMargin": { "type": "object" },
+		"salePriceColor": { "type": "string", "default": "" },
+		"salePriceTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"oldPriceColor": { "type": "string", "default": "" },
+
+		"periodColor": { "type": "string", "default": "" },
+		"periodTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"periodMargin": { "type": "object" },
+
+		"currencyColor": { "type": "string", "default": "" },
+		"currencyTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"currencyMargin": { "type": "object" },
+		"currencyVerticalPosition": { "type": "string", "default": "" },
+
+		"featuresDescriptionColor": { "type": "string", "default": "" },
+		"featuresDescriptionTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"featuresDescriptionBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"featuresDescriptionPadding": { "type": "object" },
+		"featuresDescriptionMargin": { "type": "object" },
+
+		"featuresTextColor": { "type": "string", "default": "" },
+		"featuresIconColor": { "type": "string", "default": "" },
+		"featuresTextTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"featuresBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"featuresPadding": { "type": "object" },
+		"featuresIconGap": { "type": "string", "default": "" },
+		"featuresMargin": { "type": "object" },
+
+		"ribbonColor": { "type": "string", "default": "" },
+		"ribbonBgColor": { "type": "string", "default": "" },
+		"ribbonTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"ribbonPadding": { "type": "object" },
+		"ribbonBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+
+		"buttonTextColor": { "type": "string", "default": "" },
+		"buttonIconColor": { "type": "string", "default": "" },
+		"buttonBgColor": { "type": "string", "default": "" },
+		"buttonTextColorHover": { "type": "string", "default": "" },
+		"buttonBgColorHover": { "type": "string", "default": "" },
+		"buttonTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"buttonBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"buttonBorderHover": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"buttonBoxShadow": { "type": "object", "default": { "x": 0, "y": 0, "b": 0, "s": 0, "c": "rgba(0, 0, 0, 0)" } },
+		"buttonBoxShadowHover": { "type": "object", "default": { "x": 0, "y": 0, "b": 0, "s": 0, "c": "rgba(0, 0, 0, 0)" } },
+		"buttonBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+		"buttonPadding": { "type": "object" },
+		"buttonMargin": { "type": "object" },
+		"buttonIconSpacing": { "type": "string", "default": "" },
+
+		"buttonSubtextColor": { "type": "string", "default": "" },
+		"buttonSubtextTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"buttonSubtextMargin": { "type": "object" }
+	}
+}

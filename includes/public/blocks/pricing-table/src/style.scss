@@ -1,0 +1,167 @@
+/**
+ * Pricing Table — front-end + editor styles.
+ *
+ * Structure ported from the Elementor widget
+ * (easy-elements/widgets/pricing-table/css/pricing.scss). Element classes use
+ * this plugin's own "eelfg-" prefix. The box styling that Elementor applied to
+ * the widget container is applied here to `.eelfg-pricing-table`.
+ */
+
+.eelfg-pricing-table {
+	position: relative;
+	border: 1px solid #eeeeeeb8;
+	padding: 30px;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 5px 16px #00000005;
+	background: #fff;
+}
+
+.eelfg-price-title {
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.eelfg-price {
+	font-size: 36px;
+	margin-bottom: 20px;
+}
+
+.eelfg-price .eelfg-period {
+	font-size: 14px;
+	margin-left: 5px;
+}
+
+.eelfg-features {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px 0;
+}
+
+.eelfg-features li {
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+}
+
+.eelfg-features li + li {
+	border-top: 1px solid #eeeeeed9;
+}
+
+.eelfg-btn-part .eelfg-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	padding: 10px 26px;
+	background-color: var(--eelfg-preset-color-primary, #ffd012);
+	color: #fff;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+
+	&.eelfg--full-btn {
+		display: block;
+	}
+}
+
+.eelfg-button svg {
+	width: 16px;
+	height: 16px;
+}
+
+/* Ribbon styles */
+.eelfg-ribbon {
+	position: absolute;
+	top: 0;
+	padding: 3px 15px;
+	background: var(--e-global-color-secondary, #0b3665);
+	color: #fff;
+	width: 100%;
+	left: 0;
+	border-radius: 16px 16px 0 0;
+	text-align: center;
+}
+
+.eelfg-old-price {
+	text-decoration: line-through;
+	margin-right: 8px;
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.eelfg-sale-price {
+	color: var(--eelfg-preset-color-primary, #ffd012);
+	font-size: 36px;
+}
+
+.eelfg-features li svg.feature-icon,
+.eelfg-features li .feature-icon i {
+	margin-right: 10px;
+	color: var(--eelfg-preset-color-primary, #ffd012);
+	font-size: 18px;
+	width: 22px;
+	height: 22px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.eelfg-features svg.feature-icon.icon-bg,
+.eelfg-features svg.feature-icon.icon-border {
+	width: 36px;
+	height: 36px;
+}
+
+.eelfg-button-subtext {
+	margin-top: 8px;
+	font-size: 14px;
+}
+
+.eelfg-features .feature-icon {
+	font-size: 16px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 8px;
+	line-height: 1;
+}
+
+.feature-icon.icon-bg {
+	background-color: #f1f1f1;
+	color: var(--e-global-color-secondary, #0b3665);
+	padding: 5px;
+	border-radius: 50%;
+}
+
+li.icon-bg svg {
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+}
+
+.feature-icon.icon-border {
+	border: 1px solid #ccc;
+	padding: 5px;
+	border-radius: 50%;
+}
+
+.featured.style2 {
+	.eelfg-ribbon {
+		position: absolute;
+		background: var(--e-global-color-secondary, #0b3665);
+		color: #fff;
+		top: 22px;
+		right: -60px;
+		z-index: 10;
+		transform: rotate(45deg);
+		width: 200px;
+		padding: 4px 0;
+		white-space: nowrap;
+		left: auto;
+
+		&.eelfg-left {
+			left: -60px;
+			transform: rotate(-45deg);
+			right: auto;
+		}
+	}
+}

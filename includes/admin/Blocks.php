@@ -43,10 +43,34 @@ class Blocks {
                 'status'      => 'enable',
                 "isPro"       => false,
             ],
+            [
+                'title'       => 'Simple Gallery',
+                'id'          => 'gallery',
+                'description' => 'Responsive image gallery with lightbox.',
+                'iconName'    => 'grid.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Accordion',
+                'id'          => 'faq',
+                'description' => 'FAQ accordion with collapsible icons and schema.',
+                'iconName'    => 'list.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Pricing Table',
+                'id'          => 'pricing-table',
+                'description' => 'Configurable pricing table with features, featured ribbon and CTA button.',
+                'iconName'    => 'list.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
         ];
 
         // Default-enabled IDs: any block we want available without the user toggling it on first.
-        $default_enabled = [ 'layout-row', 'column', 'post-grid' ];
+        $default_enabled = [ 'layout-row', 'column', 'post-grid', 'gallery', 'faq', 'pricing-table' ];
 
         // Merge status from DB
         foreach ($blocks as &$block) {
@@ -62,6 +86,4 @@ class Blocks {
 
     public function register_blocks() {
     }
-
-
 }   

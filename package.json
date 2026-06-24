@@ -1,14 +1,20 @@
 {
   "scripts": {
-      "start": "concurrently \"npm:start:main\" \"npm:start:postGrid\" \"npm:start:row\" \"npm:start:column\"",
+      "start": "concurrently \"npm:start:main\" \"npm:start:postGrid\" \"npm:start:row\" \"npm:start:column\" \"npm:start:gallery\" \"npm:start:faq\"",
       "start:main": "wp-scripts start",
       "start:postGrid": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/post-grid/src --output-path=includes/public/blocks/post-grid/build",
       "start:row": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/layout-row/src --output-path=includes/public/blocks/layout-row/build",
       "start:column": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/column/src --output-path=includes/public/blocks/column/build",
+      "start:gallery": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/gallery/src --output-path=includes/public/blocks/gallery/build",
+      "start:faq": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/faq/src --output-path=includes/public/blocks/faq/build",
+      "start:pricing": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/pricing-table/src --output-path=includes/public/blocks/pricing-table/build",
       "build": "wp-scripts build",
       "build:postGrid": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/post-grid/src --output-path=includes/public/blocks/post-grid/build",
       "build:row": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/layout-row/src --output-path=includes/public/blocks/layout-row/build",
-      "build:column": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/column/src --output-path=includes/public/blocks/column/build"
+      "build:column": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/column/src --output-path=includes/public/blocks/column/build",
+      "build:gallery": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/gallery/src --output-path=includes/public/blocks/gallery/build",
+      "build:faq": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/faq/src --output-path=includes/public/blocks/faq/build",
+      "build:pricing": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/pricing-table/src --output-path=includes/public/blocks/pricing-table/build"
   },
   "devDependencies": {
     "@wordpress/scripts": "^32.4.0",

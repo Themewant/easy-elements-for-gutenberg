@@ -1,0 +1,60 @@
+/**
+ * Editor-only styles for the FAQ Accordion block (inline editing).
+ */
+.eelfg-faq-block-wrap {
+	.eelfg-faq-item {
+		position: relative;
+	}
+
+	// Accordion preview: only the open item's answer is visible (open-all mode
+	// keeps the front-end rule that shows them all). The doubled class raises
+	// specificity above the front-end `.eelfg-faq-answer { display:none }` rule.
+	.eelfg-faq-item.active.is-open .eelfg-faq-answer {
+		display: block;
+	}
+
+	// Toggle button wrapping the +/- icons — reset native button chrome.
+	.eelfg-faq-icon-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		color: inherit;
+		line-height: 0;
+	}
+
+	// Per-item controls float at the top-right; revealed on hover/focus.
+	.eelfg-faq-editor-controls {
+		position: absolute;
+		top: 6px;
+		right: 6px;
+		z-index: 2;
+		display: flex;
+		gap: 2px;
+		padding: 2px;
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 4px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		opacity: 0;
+		transition: opacity 0.15s ease;
+	}
+
+	.eelfg-faq-item:hover .eelfg-faq-editor-controls,
+	.eelfg-faq-item:focus-within .eelfg-faq-editor-controls {
+		opacity: 1;
+	}
+
+	// The editable title should stay clickable/typed even with the icon beside it.
+	.eelfg-faq-title {
+		outline: none;
+	}
+}
+
+.eelfg-faq-add-row {
+	margin-top: 12px;
+}
