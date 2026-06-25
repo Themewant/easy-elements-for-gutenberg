@@ -1,0 +1,293 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "easy-elements-for-gutenberg/tab",
+  "version": "0.1.0",
+  "title": "Tabs",
+  "category": "easy-elements-for-gutenberg",
+  "description": "Tabbed content with icon/image titles, content title, description and a button — horizontal or vertical layouts.",
+  "keywords": [
+    "tab",
+    "tabs",
+    "link",
+    "click",
+    "content"
+  ],
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "padding": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "margin": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ]
+    }
+  },
+  "textdomain": "easy-elements-for-gutenberg",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "tabs": {
+      "type": "array",
+      "default": [
+        {
+          "tabTitle": "Our Company",
+          "iconType": "icon",
+          "icon": "",
+          "image": {},
+          "contentTitle": "",
+          "contentDescription": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.",
+          "readMoreText": "",
+          "readMoreUrl": "#",
+          "readMoreNewTab": false
+        },
+        {
+          "tabTitle": "Our Mission",
+          "iconType": "icon",
+          "icon": "",
+          "image": {},
+          "contentTitle": "",
+          "contentDescription": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.",
+          "readMoreText": "",
+          "readMoreUrl": "#",
+          "readMoreNewTab": false
+        },
+        {
+          "tabTitle": "Our Vision",
+          "iconType": "icon",
+          "icon": "",
+          "image": {},
+          "contentTitle": "",
+          "contentDescription": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.",
+          "readMoreText": "",
+          "readMoreUrl": "#",
+          "readMoreNewTab": false
+        }
+      ]
+    },
+    "iconPosition": {
+      "type": "string",
+      "default": "left"
+    },
+    "layoutDirection": {
+      "type": "string",
+      "default": "top"
+    },
+    "titleTypography": {
+      "type": "object",
+      "default": {
+        "fontFamily": "",
+        "fontSize": "",
+        "fontWeight": "",
+        "fontStyle": "",
+        "textTransform": "",
+        "lineHeight": "",
+        "letterSpacing": ""
+      }
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "titleBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "titlePadding": {
+      "type": "object"
+    },
+    "titleMargin": {
+      "type": "object"
+    },
+    "tabIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabIconBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleActiveColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "titleActiveBgColor": {
+      "type": "string",
+      "default": "#5933FF"
+    },
+    "titleActiveBorderColor": {
+      "type": "string",
+      "default": "#5933FF"
+    },
+    "titleBottomSpacing": {
+      "type": "string",
+      "default": ""
+    },
+    "navBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "contentBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "contentBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "contentPadding": {
+      "type": "object"
+    },
+    "contentMargin": {
+      "type": "object"
+    },
+    "descriptionAlignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "contentTitleTypography": {
+      "type": "object",
+      "default": {
+        "fontFamily": "",
+        "fontSize": "",
+        "fontWeight": "",
+        "fontStyle": "",
+        "textTransform": "",
+        "lineHeight": "",
+        "letterSpacing": ""
+      }
+    },
+    "contentTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTitleMargin": {
+      "type": "object"
+    },
+    "descTypography": {
+      "type": "object",
+      "default": {
+        "fontFamily": "",
+        "fontSize": "",
+        "fontWeight": "",
+        "fontStyle": "",
+        "textTransform": "",
+        "lineHeight": "",
+        "letterSpacing": ""
+      }
+    },
+    "descColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descMargin": {
+      "type": "object"
+    },
+    "btnTypography": {
+      "type": "object",
+      "default": {
+        "fontFamily": "",
+        "fontSize": "",
+        "fontWeight": "",
+        "fontStyle": "",
+        "textTransform": "",
+        "lineHeight": "",
+        "letterSpacing": ""
+      }
+    },
+    "btnColor": {
+      "type": "string",
+      "default": ""
+    },
+    "btnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "btnHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "btnHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "btnHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "btnBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "btnBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "btnPadding": {
+      "type": "object"
+    },
+    "btnMargin": {
+      "type": "object"
+    }
+  }
+}

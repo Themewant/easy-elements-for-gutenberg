@@ -1,0 +1,196 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Local template/iteration variables.
+
+/**
+ * Server-side render for the Feature List block.
+ *
+ * Mirrors the markup of the Elementor "Feature List" widget
+ * (easy-elements/widgets/feature-list). Element classes use the "eelfg-" prefix.
+ */
+
+$H = '\EELFG\Frontend\Helper';
+
+$unique_id = ! empty( $attributes['blockId'] ) ? $attributes['blockId'] : 'eelfg-fea-' . substr( md5( wp_json_encode( $attributes ) ), 0, 6 );
+
+$features   = isset( $attributes['features'] ) && is_array( $attributes['features'] ) ? $attributes['features'] : [];
+$dir        = ( isset( $attributes['feaDir'] ) && 'right' === $attributes['feaDir'] ) ? 'right' : 'left';
+$view       = isset( $attributes['iconView'] ) ? $attributes['iconView'] : 'stracked';
+$shape      = isset( $attributes['iconShape'] ) ? $attributes['iconShape'] : 'rounded';
+$allowed    = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span' ];
+$title_tag  = isset( $attributes['titleTag'] ) && in_array( $attributes['titleTag'], $allowed, true ) ? $attributes['titleTag'] : 'h3';
+$connector  = ! empty( $attributes['feaConnector'] );
+$conn_left  = $connector && ! empty( $attributes['feaConnectorLeft'] );
+
+if ( empty( $features ) ) {
+	$w = get_block_wrapper_attributes( array( 'class' => 'eelfg-block eelfg-fea-list-block-wrap ' . $unique_id ) );
+	echo '<div ' . wp_kses_post( $w ) . '><p>' . esc_html__( 'Please add feature items.', 'easy-elements-for-gutenberg' ) . '</p></div>';
+	return;
+}
+
+$wrap_classes = [
+	'eelfg-block', 'eelfg-fea-list-block-wrap', $unique_id, 'eelfg-fea-list-wrapper',
+	'eelfg-fea-list-icon-view-' . $view,
+	'eelfg-fea-list-icon-shape-' . $shape,
+	'eelfg-fea-list-dir-' . $dir,
+];
+if ( $connector ) { $wrap_classes[] = 'eelfg-fea-list-connector'; }
+if ( $conn_left ) { $wrap_classes[] = 'eelfg-fea-list-connector-left'; }
+
+$block_wrap_attr = get_block_wrapper_attributes( array( 'class' => implode( ' ', $wrap_classes ) ) );
+if ( empty( $block_wrap_attr ) ) {
+	$block_wrap_attr = 'class="' . esc_attr( implode( ' ', $wrap_classes ) ) . '"';
+}
+
+// ---------------------------------------------------------------------------
+// Inline styles.
+// ---------------------------------------------------------------------------
+$selector     = '.eelfg-fea-list-block-wrap.' . $unique_id;
+$style_handle = 'eelfg-feature-list-style';
+
+$typo = function ( $obj ) use ( $H ) {
+	$out = [];
+	if ( empty( $obj ) || ! is_array( $obj ) ) return $out;
+	if ( ! empty( $obj['fontFamily'] ) ) $out['font-family'] = $obj['fontFamily'];
+	if ( ! empty( $obj['fontSize'] ) ) $out['font-size'] = $H::ensure_unit( $obj['fontSize'] );
+	if ( ! empty( $obj['fontWeight'] ) ) $out['font-weight'] = $obj['fontWeight'];
+	if ( ! empty( $obj['fontStyle'] ) ) $out['font-style'] = $obj['fontStyle'];
+	if ( ! empty( $obj['textTransform'] ) ) $out['text-transform'] = $obj['textTransform'];
+	if ( ! empty( $obj['lineHeight'] ) ) $out['line-height'] = $obj['lineHeight'];
+	if ( ! empty( $obj['letterSpacing'] ) ) $out['letter-spacing'] = $H::ensure_unit( $obj['letterSpacing'] );
+	return $out;
+};
+$dims = function ( $obj, $type ) use ( $H ) {
+	$out = [];
+	if ( empty( $obj ) || ! is_array( $obj ) ) return $out;
+	$map = 'padding' === $type
+		? [ 'top' => 'padding-top', 'right' => 'padding-right', 'bottom' => 'padding-bottom', 'left' => 'padding-left' ]
+		: [ 'top' => 'border-top-left-radius', 'right' => 'border-top-right-radius', 'bottom' => 'border-bottom-right-radius', 'left' => 'border-bottom-left-radius' ];
+	foreach ( $map as $side => $css_prop ) {
+		if ( isset( $obj[ $side ] ) && '' !== $obj[ $side ] ) $out[ $css_prop ] = $H::ensure_unit( $obj[ $side ] );
+	}
+	return $out;
+};
+$shadow = function ( $obj ) use ( $H ) {
+	if ( empty( $obj ) || ! is_array( $obj ) ) return [];
+	$x = (int) ( $obj['x'] ?? 0 ); $y = (int) ( $obj['y'] ?? 0 ); $b = (int) ( $obj['b'] ?? 0 ); $s = (int) ( $obj['s'] ?? 0 );
+	$c = $obj['c'] ?? '';
+	$transparent = in_array( str_replace( ' ', '', (string) $c ), [ '', 'rgba(0,0,0,0)' ], true );
+	if ( 0 === $x && 0 === $y && 0 === $b && 0 === $s && $transparent ) return [];
+	return [ 'box-shadow' => $H::box_shadow_to_css( $obj ) ];
+};
+$bg = function ( $colorKey, $gradKey ) use ( $attributes ) {
+	if ( ! empty( $attributes[ $gradKey ] ) ) return [ 'background' => $attributes[ $gradKey ] ];
+	if ( ! empty( $attributes[ $colorKey ] ) ) return [ 'background' => $attributes[ $colorKey ] ];
+	return [];
+};
+$u = function ( $key ) use ( $attributes, $H ) {
+	return ( isset( $attributes[ $key ] ) && '' !== $attributes[ $key ] ) ? $H::ensure_unit( $attributes[ $key ] ) : '';
+};
+
+// List item.
+$list = $bg( 'listBgColor', 'listBgGradient' );
+if ( ! empty( $attributes['feaListBorder'] ) ) $list = array_merge( $list, $H::border_to_css_props( $attributes['feaListBorder'] ) );
+$list = array_merge( $list, $dims( $attributes['feaListBorderRadius'] ?? [], 'radius' ), $dims( $attributes['feaListPadding'] ?? [], 'padding' ) );
+if ( '' !== $u( 'feaItemGap' ) ) $list['margin-bottom'] = $u( 'feaItemGap' );
+if ( '' !== $u( 'feaMiddleGap' ) ) $list['gap'] = $u( 'feaMiddleGap' );
+if ( ! empty( $attributes['feaVerticalAlign'] ) ) $list['align-items'] = $attributes['feaVerticalAlign'];
+
+// Connector (::before on wrapper, ::after on icon for left connector).
+$conn = [];
+if ( ! empty( $attributes['feaConnectorType'] ) ) $conn['border-style'] = $attributes['feaConnectorType'];
+if ( '' !== $u( 'feaConnectorWidth' ) ) $conn['border-width'] = $u( 'feaConnectorWidth' );
+if ( ! empty( $attributes['feaConnectorColor'] ) ) $conn['border-color'] = $attributes['feaConnectorColor'];
+$conn_before = $conn;
+if ( 'left' === $dir && '' !== $u( 'feaConnectorPositionX' ) ) $conn_before['left'] = $u( 'feaConnectorPositionX' );
+if ( 'right' === $dir && '' !== $u( 'feaConnectorRightPositionX' ) ) $conn_before['right'] = $u( 'feaConnectorRightPositionX' );
+
+// The connector line is a ::before on the wrapper element itself (which is the
+// scoped selector), so it can't go through the descendant-based sub_styles map.
+$extra_css = '';
+if ( $connector ) {
+	$before_decls = $H::get_inline_styles( $conn_before );
+	if ( $before_decls ) {
+		$extra_css = $selector . '.eelfg-fea-list-connector::before{' . $before_decls . '}';
+	}
+}
+
+// Icon.
+$icon_color = [];
+if ( ! empty( $attributes['iconColor'] ) ) { $icon_color['color'] = $attributes['iconColor']; $icon_color['fill'] = $attributes['iconColor']; }
+$icon_box = $bg( 'iconBgColor', 'iconBgGradient' );
+if ( '' !== $u( 'iconBoxSize' ) ) { $b = $u( 'iconBoxSize' ); $icon_box['min-width'] = $b; $icon_box['min-height'] = $b; $icon_box['line-height'] = $b; }
+if ( ! empty( $attributes['iconAlignment'] ) ) $icon_box['justify-content'] = $attributes['iconAlignment'];
+$icon_box = array_merge( $icon_box, $shadow( $attributes['iconShadow'] ?? [] ), $dims( $attributes['iconRadius'] ?? [], 'radius' ) );
+if ( ! empty( $attributes['iconBorder'] ) ) $icon_box = array_merge( $icon_box, $H::border_to_css_props( $attributes['iconBorder'] ) );
+$icon_svg = ( '' !== $u( 'iconSize' ) ) ? [ 'width' => $u( 'iconSize' ), 'height' => $u( 'iconSize' ) ] : [];
+$icon_num = ( '' !== $u( 'iconSize' ) ) ? [ 'font-size' => $u( 'iconSize' ) ] : [];
+
+// Title / description.
+$title_styles = $typo( $attributes['titleTypography'] ?? [] );
+if ( ! empty( $attributes['titleColor'] ) ) $title_styles['color'] = $attributes['titleColor'];
+$title_styles = array_merge( $title_styles, $dims( $attributes['titlePadding'] ?? [], 'padding' ) );
+$desc_styles = $typo( $attributes['descTypography'] ?? [] );
+if ( ! empty( $attributes['descColor'] ) ) $desc_styles['color'] = $attributes['descColor'];
+
+wp_enqueue_style( $style_handle );
+$H::add_custom_style( $style_handle, $selector, $extra_css, [
+	'.eelfg-fea-list'                            => $H::get_inline_styles( $list ),
+	'.eelfg-fea-list-icon::after'                => $H::get_inline_styles( $conn ),
+	'.eelfg-fea-list-icon svg, ' . $selector . ' .eelfg-fea-list-icon svg path, ' . $selector . ' .eelfg-fea-list-icon i, ' . $selector . ' .eelfg-fea-list-number' => $H::get_inline_styles( $icon_color ),
+	'.eelfg-fea-list-icon'                       => $H::get_inline_styles( $icon_box ),
+	'.eelfg-fea-list-icon svg'                   => $H::get_inline_styles( $icon_svg ),
+	'.eelfg-fea-list-number'                     => $H::get_inline_styles( $icon_num ),
+	'.eelfg-fea-list-title'                      => $H::get_inline_styles( $title_styles ),
+	'.eelfg-fea-list-desc'                       => $H::get_inline_styles( $desc_styles ),
+] );
+
+// ---------------------------------------------------------------------------
+// Markup.
+// ---------------------------------------------------------------------------
+$svg_star = '<svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>';
+?>
+<div <?php echo wp_kses_post( $block_wrap_attr ); ?>>
+	<?php
+	foreach ( $features as $item ) :
+		$type = isset( $item['icon_type'] ) ? $item['icon_type'] : ( $item['iconType'] ?? 'icon' );
+		$icon = isset( $item['icon'] ) ? $item['icon'] : '';
+		$num  = isset( $item['number'] ) ? $item['number'] : '';
+		$img  = isset( $item['image'] ) && is_array( $item['image'] ) ? $item['image'] : [];
+		$ttl  = isset( $item['title'] ) ? $item['title'] : '';
+		$desc = isset( $item['desc'] ) ? $item['desc'] : '';
+
+		$has_icon = ( 'image' === $type && ! empty( $img['url'] ) )
+			|| ( 'icon' === $type )
+			|| ( 'number' === $type && '' !== $num );
+		?>
+		<div class="eelfg-fea-list eelfg-fea-list-dir-<?php echo esc_attr( $dir ); ?>">
+			<?php if ( $has_icon ) : ?>
+				<div class="eelfg-fea-list-icon eelfg-fea-list-type-<?php echo esc_attr( $type ); ?>">
+					<?php
+					if ( 'image' === $type && ! empty( $img['url'] ) ) {
+						echo '<img src="' . esc_url( $img['url'] ) . '" alt="' . esc_attr( $img['alt'] ?? $ttl ) . '" class="eelfg-fea-list-img">';
+					} elseif ( 'number' === $type ) {
+						echo '<span class="eelfg-fea-list-number">' . esc_html( $num ) . '</span>';
+					} else {
+						echo ( ! empty( $icon ) && 'none' !== $icon ) ? '<i class="eelfg-icon ' . esc_attr( $icon ) . '" aria-hidden="true"></i>' : $svg_star; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					}
+					?>
+				</div>
+			<?php endif; ?>
+			<?php if ( '' !== $ttl || '' !== $desc ) : ?>
+				<div class="eelfg-fea-list-info">
+					<?php if ( '' !== $ttl ) : ?>
+						<?php printf( '<%1$s class="eelfg-fea-list-title">%2$s</%1$s>', tag_escape( $title_tag ), wp_kses_post( $ttl ) ); ?>
+					<?php endif; ?>
+					<?php if ( '' !== $desc ) : ?>
+						<p class="eelfg-fea-list-desc"><?php echo esc_html( $desc ); ?></p>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	<?php endforeach; ?>
+</div>

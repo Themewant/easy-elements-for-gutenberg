@@ -1,0 +1,94 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "easy-elements-for-gutenberg/testimonials-grid",
+	"version": "0.1.0",
+	"title": "Testimonials Grid",
+	"category": "easy-elements-for-gutenberg",
+	"description": "A grid of testimonials with 6 skins, ratings, quote icons, logos and a view-all reveal.",
+	"keywords": [ "testimonial", "review", "feedback", "quote", "grid" ],
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"padding": [ "top", "bottom", "left", "right" ],
+			"margin": [ "top", "bottom", "left", "right" ]
+		}
+	},
+	"textdomain": "easy-elements-for-gutenberg",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"attributes": {
+		"blockId": { "type": "string", "default": "" },
+		"testimonialsSkin": { "type": "string", "default": "default" },
+		"avatarImageTop": { "type": "boolean", "default": false },
+		"showLoadmore": { "type": "boolean", "default": false },
+		"loadMoreText": { "type": "string", "default": "View all reviews" },
+
+		"testimonials": {
+			"type": "array",
+			"default": [
+				{ "image": {}, "name": "Stefan Sears", "designation": "Developer, Easy Elements Inc", "description": "This service exceeded all my expectations. The team was professional, fast, and truly cared about delivering a top-notch experience from start to finish.", "quoteIcon": "", "showQuoteIconSkin1": false, "rating": "5", "logo": {} },
+				{ "image": {}, "name": "Stefan Sears", "designation": "Developer, Easy Elements Inc", "description": "This service exceeded all my expectations. The team was professional, fast, and truly cared about delivering a top-notch experience from start to finish.", "quoteIcon": "", "showQuoteIconSkin1": false, "rating": "5", "logo": {} },
+				{ "image": {}, "name": "Stefan Sears", "designation": "Developer, Easy Elements Inc", "description": "This service exceeded all my expectations. The team was professional, fast, and truly cared about delivering a top-notch experience from start to finish.", "quoteIcon": "", "showQuoteIconSkin1": false, "rating": "5", "logo": {} },
+				{ "image": {}, "name": "Stefan Sears", "designation": "Developer, Easy Elements Inc", "description": "This service exceeded all my expectations. The team was professional, fast, and truly cared about delivering a top-notch experience from start to finish.", "quoteIcon": "", "showQuoteIconSkin1": false, "rating": "5", "logo": {} }
+			]
+		},
+
+		"showImage": { "type": "boolean", "default": true },
+		"columns": { "type": "string", "default": "3" },
+		"columnsTablet": { "type": "string", "default": "3" },
+		"columnsMobile": { "type": "string", "default": "2" },
+		"itemPadding": { "type": "object" },
+		"logoHeight": { "type": "string", "default": "" },
+		"testimonialsAlignment": { "type": "string", "default": "" },
+		"showRating": { "type": "boolean", "default": true },
+		"ratingColor": { "type": "string", "default": "" },
+		"ratingSize": { "type": "string", "default": "" },
+		"titleIcon": { "type": "string", "default": "" },
+
+		"bgColor": { "type": "string", "default": "" },
+		"bgGradient": { "type": "string", "default": "" },
+		"itemBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"itemBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+		"itemBoxShadow": { "type": "object", "default": { "x": 0, "y": 0, "b": 0, "s": 0, "c": "rgba(0, 0, 0, 0)" } },
+		"itemInnerPadding": { "type": "object" },
+		"wrapperGap": { "type": "string", "default": "" },
+
+		"nameColor": { "type": "string", "default": "" },
+		"nameTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"nameMargin": { "type": "object" },
+
+		"designationColor": { "type": "string", "default": "" },
+		"designationTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+
+		"descriptionColor": { "type": "string", "default": "" },
+		"descriptionTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"descriptionMargin": { "type": "object" },
+		"minHeight": { "type": "string", "default": "" },
+		"maxWidth": { "type": "string", "default": "" },
+
+		"authorMetaAlignment": { "type": "string", "default": "flex-start" },
+		"authorMetaAlignmentStyle4": { "type": "string", "default": "left" },
+		"authorMetaGap": { "type": "object" },
+		"authorImageSize": { "type": "string", "default": "" },
+		"authorImageBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+
+		"quoteIconColor": { "type": "string", "default": "" },
+		"quoteIconSize": { "type": "string", "default": "" },
+
+		"loadMoreTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"loadMoreColor": { "type": "string", "default": "" },
+		"loadMoreBgColor": { "type": "string", "default": "" },
+		"loadMoreBgGradient": { "type": "string", "default": "" },
+		"loadmorePadding": { "type": "object" },
+		"loadmoreBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+		"loadMoreBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"loadMoreHoverColor": { "type": "string", "default": "" },
+		"loadMoreHoverBgColor": { "type": "string", "default": "" },
+		"loadMoreHoverBgGradient": { "type": "string", "default": "" },
+		"loadMoreHoverBorderColor": { "type": "string", "default": "" }
+	}
+}

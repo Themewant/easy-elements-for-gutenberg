@@ -194,9 +194,10 @@ class Helper {
 						'controls'    => (int) $controls,
 						'rel'         => 0,
 						'playsinline' => 1,
+						'referrerpolicy' => 'strict-origin-when-cross-origin',
 					), 'https://www.youtube.com/embed/' . $m[1] );
 
-					return '<iframe width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="' . esc_url( $src ) . '" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+					return '<iframe referrerpolicy="strict-origin-when-cross-origin" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="' . esc_url( $src ) . '" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
 				}
 
 				if ( preg_match( '/vimeo\.com\/(?:video\/)?(\d+)/', $video_url, $m ) ) {
@@ -224,7 +225,7 @@ class Helper {
 					$mute_param = 'muted=' . $mute;
 				}
 
-				$params = '&autoplay=' . $autoplay . '&' . $mute_param . '&controls=' . $controls;
+				$params = '&referrerpolicy="strict-origin-when-cross-origin&autoplay=' . $autoplay . '&' . $mute_param . '&controls=' . $controls;
 
 				$embed_video = preg_replace(
 					'/src="([^"]+)"/',

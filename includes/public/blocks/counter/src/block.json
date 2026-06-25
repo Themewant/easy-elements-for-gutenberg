@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "easy-elements-for-gutenberg/counter",
+	"version": "0.1.0",
+	"title": "Counter",
+	"category": "easy-elements-for-gutenberg",
+	"description": "An animated number counter with prefix/suffix, icon, title, and counter or odometer animation.",
+	"keywords": [ "counter", "number", "odometer", "stats", "animated" ],
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"padding": [ "top", "bottom", "left", "right" ],
+			"margin": [ "top", "bottom", "left", "right" ]
+		}
+	},
+	"textdomain": "easy-elements-for-gutenberg",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"attributes": {
+		"blockId": { "type": "string", "default": "" },
+		"number": { "type": "string", "default": "500" },
+		"startNumber": { "type": "string", "default": "0" },
+		"prefix": { "type": "string", "default": "" },
+		"suffix": { "type": "string", "default": "" },
+		"duration": { "type": "string", "default": "1000" },
+		"format": { "type": "string", "default": "default" },
+		"animationType": { "type": "string", "default": "counter" },
+		"iconEnable": { "type": "boolean", "default": false },
+		"icon": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "Easy Elements" },
+		"titleTag": { "type": "string", "default": "span" },
+
+		"titlePosition": { "type": "string", "default": "bottom" },
+		"contentGap": { "type": "string", "default": "" },
+		"contentVerticalAlign": { "type": "string", "default": "" },
+		"subPreGap": { "type": "string", "default": "" },
+		"wrapAlign": { "type": "string", "default": "" },
+		"wrapJustify": { "type": "string", "default": "" },
+		"iconPosition": { "type": "string", "default": "top" },
+		"iconGap": { "type": "string", "default": "" },
+
+		"numberColor": { "type": "string", "default": "" },
+		"numberTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"numberStrokeWidth": { "type": "string", "default": "" },
+		"numberStrokeColor": { "type": "string", "default": "" },
+		"numberTextShadow": { "type": "object", "default": { "x": "", "y": "", "blur": "", "color": "" } },
+
+		"prefixColor": { "type": "string", "default": "" },
+		"prefixTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"prefixTextShadow": { "type": "object", "default": { "x": "", "y": "", "blur": "", "color": "" } },
+
+		"suffixColor": { "type": "string", "default": "" },
+		"suffixTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"suffixTextShadow": { "type": "object", "default": { "x": "", "y": "", "blur": "", "color": "" } },
+
+		"titleColor": { "type": "string", "default": "" },
+		"titleTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"titleAlign": { "type": "string", "default": "" },
+		"titleTextShadow": { "type": "object", "default": { "x": "", "y": "", "blur": "", "color": "" } },
+
+		"iconColor": { "type": "string", "default": "" },
+		"iconBgColor": { "type": "string", "default": "" },
+		"iconBoxSize": { "type": "string", "default": "" },
+		"iconSize": { "type": "string", "default": "" },
+		"iconBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+		"iconPadding": { "type": "object" },
+		"iconBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"iconBoxShadow": { "type": "object", "default": { "x": 0, "y": 0, "b": 0, "s": 0, "c": "rgba(0, 0, 0, 0)" } }
+	}
+}

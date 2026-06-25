@@ -1,0 +1,249 @@
+/**
+ * Testimonials Grid — front-end + editor styles.
+ *
+ * Structure ported from the Elementor widget
+ * (easy-elements/widgets/testimonials-grid/css/testimonials.scss). Element
+ * classes use this plugin's own "eelfg-" prefix and preset CSS variables.
+ */
+
+.eelfg-testimonial .eelfg-grid-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.eelfg-testimonial .eelfg-grid-item {
+	padding: 10px;
+	box-sizing: border-box;
+}
+.eelfg-grid-layout .eelfg-testimonial-item {
+	text-align: center;
+}
+
+.eelfg-rating {
+	color: #ffaf02;
+	font-size: 25px;
+	line-height: 100%;
+}
+.eelfg-rating .star {
+	margin-right: 0px;
+}
+.eelfg-rating .star.filled {
+	color: #ffaf02;
+}
+
+.eelfg-title-icon svg {
+	height: 1em;
+	width: 1em;
+	position: relative;
+	top: 4px;
+	left: 2px;
+}
+
+.eelfg-grid-layout .eelfg-tstml-inner {
+	background: #efeff9;
+	display: inline-flex;
+	gap: 80px;
+	padding: 80px;
+	border-radius: 16px;
+	align-items: self-start;
+
+	.eelfg-author-wrap {
+		display: inline-flex;
+		text-align: left;
+		justify-content: space-between;
+	}
+	.eelfg-author {
+		min-width: auto;
+	}
+	.eelfg-designation {
+		font-size: 14px;
+		line-height: 150%;
+		color: #12121280;
+		font-style: normal;
+		margin-bottom: 8px;
+		display: inline-block;
+	}
+	.eelfg-picture {
+		min-width: max-content;
+		margin-right: 24px;
+	}
+	.eelfg-picture img {
+		width: 100px;
+		height: 100px;
+		border-radius: 100%;
+		object-fit: cover;
+	}
+	.eelfg-name {
+		font-size: 20px;
+		line-height: 100%;
+	}
+	.eelfg-description {
+		font-size: 24px;
+		text-align: left;
+		color: var(--eelfg-preset-color-text, #7a8986);
+		line-height: 150%;
+		letter-spacing: -0.02em;
+	}
+	.eelfg-quote {
+		text-align: left;
+		svg {
+			height: 120px;
+			fill: var(--eelfg-preset-color-primary, #eaa638);
+		}
+	}
+
+	&.skin1 {
+		display: block;
+		.eelfg-picture img { width: 50px; height: 50px; }
+		.eelfg-picture { min-width: 50px; margin-right: 15px; }
+		.eelfg-author-wrap { justify-content: flex-start; width: 100%; margin-top: 25px; align-items: center; }
+		.eelfg-designation { margin-bottom: 0; }
+		.eelfg-company-logo { text-align: left; margin-bottom: 12px; }
+	}
+
+	&.skin2 {
+		display: block;
+		.eelfg-picture-des-wrap { display: flex; justify-content: space-between; }
+		.eelfg-picture img { width: 50px; height: 50px; }
+		.eelfg-picture { min-width: 50px; margin-right: 15px; }
+		.eelfg-author-wrap { justify-content: flex-start; width: 100%; margin-top: 25px; align-items: center; }
+		.eelfg-designation { margin-bottom: 0; }
+		.eelfg-company-logo { text-align: left; margin-bottom: 12px; }
+
+		&.eelfg-avatar-image-top {
+			.eelfg-company-logo { text-align: center; }
+			.eelfg-picture-des-wrap { display: block; }
+			.eelfg-picture { margin-bottom: 24px; margin-right: 0; }
+			.eelfg-description { text-align: center; }
+			.eelfg-author-wrap { justify-content: center; text-align: center; }
+		}
+	}
+
+	&.skin3 {
+		display: block;
+		.eelfg-picture-des-wrap { display: flex; justify-content: space-between; }
+		.eelfg-picture img { width: 50px; height: 50px; display: block; }
+		.eelfg-picture { min-width: max-content; margin-right: 15px; }
+		.eelfg-author-wrap { justify-content: flex-start; width: 100%; margin-top: 25px; align-items: center; }
+		.eelfg-designation { margin-bottom: 0; }
+		.eelfg-company-logo { text-align: left; margin-bottom: 12px; }
+		.eelfg-rating { display: flex; justify-content: end; flex: 1; }
+	}
+
+	&.skin4 {
+		display: block;
+		.eelfg-picture-des-wrap { display: flex; justify-content: space-between; }
+		.eelfg-picture img { width: 100%; height: 400px; border-radius: 8px; }
+		.eelfg-picture { min-width: 320px; margin-right: 80px; }
+		.eelfg-author-wrap { justify-content: flex-start; width: 100%; margin-top: 25px; align-items: flex-end; }
+		.eelfg-designation { margin-bottom: 0; }
+		.eelfg-company-logo { text-align: left; margin-bottom: 12px; }
+		.eelfg-description-wrap { display: grid; }
+	}
+
+	&.skin5 {
+		display: block;
+		.eelfg-picture-des-wrap { display: flex; justify-content: space-between; }
+		.eelfg-picture img { width: 50px; height: 50px; display: block; }
+		.eelfg-picture { min-width: 50px; margin-right: 15px; }
+		.eelfg-author { min-width: 100px; }
+		.eelfg-author-wrap { justify-content: flex-start; width: 100%; margin-top: 25px; align-items: center; }
+		.eelfg-designation { margin-bottom: 0; }
+		.eelfg-company-logo { text-align: left; margin-bottom: 12px; }
+		.eelfg-rating { display: flex; flex: 1; text-align: right; margin-left: 15px; justify-content: end; }
+	}
+
+	&.skin6 {
+		display: block;
+		.eelfg-picture-des-wrap { display: flex; justify-content: space-between; }
+		.eelfg-picture img { width: 50px; height: 50px; display: block; }
+		.eelfg-picture { min-width: 50px; margin-right: 15px; }
+		.eelfg-description { text-align: center; }
+		.eelfg-author-wrap { justify-content: center; width: 100%; margin-top: 25px; align-items: center; }
+		.eelfg-designation { margin-bottom: 0; }
+		.eelfg-company-logo { text-align: center; margin-bottom: 12px; }
+		.eelfg-rating { display: flex; justify-content: center; margin-bottom: 10px; }
+	}
+}
+
+.eelfg-hidden-testimonial {
+	display: none;
+}
+
+.eelfg-testifull-overlay {
+	position: relative;
+	&::after {
+		background: linear-gradient(180deg, rgba(246, 244, 240, 0) 57.03%, #f6f4f0 94.05%);
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+	}
+}
+
+.eelfg-testimonial-more-btn {
+	background: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.15);
+	border-radius: 12px;
+	font-size: 18px;
+	line-height: 110%;
+	color: #121212;
+	padding: 12px 24px;
+	cursor: pointer;
+	text-align: center;
+	max-width: max-content;
+	margin: 30px auto 0;
+	position: relative;
+	z-index: 1;
+	transition: all 0.5s ease;
+	&:hover {
+		background: #1f2937;
+		color: #fff;
+		border-color: #1f2937;
+	}
+}
+
+@media (max-width: 1024px) {
+	.eelfg-tstml-inner {
+		display: grid;
+		gap: 20px;
+		padding: 30px;
+	}
+	.eelfg-tstml-inner .eelfg-author-wrap { justify-content: flex-start; }
+	.eelfg-tstml-inner .eelfg-author { display: inline-grid; align-content: center; }
+	.eelfg-tstml-inner.skin3 .eelfg-author-wrap { flex-wrap: wrap; display: flex; }
+	.eelfg-tstml-inner.skin4 .eelfg-picture { margin-right: 30px; }
+}
+
+@media (max-width: 768px) {
+	.eelfg-author-wrap { flex-direction: column; gap: 10px; }
+	.eelfg-tstml-inner { display: block; }
+	.eelfg-tstml-inner .eelfg-author { text-align: center; margin-bottom: 24px; }
+	.eelfg-tstml-inner .eelfg-picture { min-width: 100px; margin: 0 auto; padding-top: 10px; }
+	.eelfg-tstml-inner .eelfg-description { text-align: center; margin-bottom: 30px; }
+	.eelfg-tstml-inner .eelfg-quote { text-align: center; }
+	.eelfg-tstml-inner .eelfg-quote svg { height: 60px; }
+	.eelfg-testimonial .eelfg-grid-wrap { display: block; }
+	.eelfg-tstml-inner.skin3 .eelfg-company-logo { text-align: center; }
+	.eelfg-tstml-inner.skin3 .eelfg-picture { margin: 0 auto; margin-bottom: 10px; }
+	.eelfg-tstml-inner.skin3 .eelfg-author { margin-bottom: 0; }
+	.eelfg-tstml-inner.skin2 .eelfg-picture-des-wrap { display: inline-grid; }
+	.eelfg-tstml-inner.skin2 .eelfg-company-logo { text-align: center; }
+	.eelfg-tstml-inner.skin2 .eelfg-picture { margin-right: auto; padding-bottom: 10px; }
+	.eelfg-tstml-inner.skin1 .eelfg-picture { margin-right: auto; }
+	.eelfg-tstml-inner.skin1 .eelfg-company-logo { text-align: center; margin-top: 15px; }
+	.eelfg-tstml-inner.skin4 .eelfg-picture-des-wrap { display: block; }
+	.eelfg-tstml-inner.skin4 .eelfg-picture { margin-right: 0; margin-bottom: 25px; }
+	.eelfg-tstml-inner .eelfg-author-wrap { display: block; text-align: center; }
+	.eelfg-tstml-inner.skin5 .eelfg-rating { justify-content: center; text-align: center; }
+	.eelfg-tstml-inner.skin5 .eelfg-picture img { margin: auto; margin-bottom: 20px; }
+	.eelfg-tstml-inner.skin5 .eelfg-company-logo { text-align: center; }
+	.eelfg-tstml-inner.skin6 .eelfg-picture img { margin: auto; margin-bottom: 10px; }
+}
+
+@media (max-width: 600px) {
+	.eelfg-tstml-inner .eelfg-description { font-size: 18px; }
+}

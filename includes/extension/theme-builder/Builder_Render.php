@@ -168,7 +168,7 @@ class Builder_Render {
 		// Render now (before wp_head) so block styles enqueue for the <head>.
 		$this->output['header'] = $this->render_location( 'header' );
 
-		require EELFG_PL_PATH . 'includes/theme-builder/templates/header.php';
+		require EELFG_PL_PATH . 'includes/extension/theme-builder/templates/header.php';
 
 		// Swallow the theme's own header.php so core's require_once no-ops it.
 		ob_start();
@@ -183,7 +183,7 @@ class Builder_Render {
 
 		$this->output['footer'] = $this->render_location( 'footer' );
 
-		require EELFG_PL_PATH . 'includes/theme-builder/templates/footer.php';
+		require EELFG_PL_PATH . 'includes/extension/theme-builder/templates/footer.php';
 
 		ob_start();
 		locate_template( array( 'footer.php' ), true, true );

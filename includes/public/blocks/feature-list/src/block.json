@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "easy-elements-for-gutenberg/feature-list",
+	"version": "0.1.0",
+	"title": "Feature List",
+	"category": "easy-elements-for-gutenberg",
+	"description": "A vertical list of features with icon, number or image, title, description and optional connector.",
+	"keywords": [ "feature", "list", "icon", "steps", "service" ],
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"padding": [ "top", "bottom", "left", "right" ],
+			"margin": [ "top", "bottom", "left", "right" ]
+		}
+	},
+	"textdomain": "easy-elements-for-gutenberg",
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"attributes": {
+		"blockId": { "type": "string", "default": "" },
+		"features": {
+			"type": "array",
+			"default": [
+				{ "iconType": "icon", "icon": "", "number": "01", "image": {}, "title": "Lightning Fast", "desc": "Your site loads in seconds with our highly optimized structure." },
+				{ "iconType": "icon", "icon": "", "number": "02", "image": {}, "title": "Smart & Flexible", "desc": "Build exactly what you envision with powerful styling controls." },
+				{ "iconType": "icon", "icon": "", "number": "03", "image": {}, "title": "Reliable Support", "desc": "Our expert team is always ready to assist you with quick, friendly help." }
+			]
+		},
+		"feaDir": { "type": "string", "default": "left" },
+		"feaVerticalAlign": { "type": "string", "default": "center" },
+		"iconView": { "type": "string", "default": "stracked" },
+		"iconShape": { "type": "string", "default": "rounded" },
+		"titleTag": { "type": "string", "default": "h3" },
+
+		"listBgColor": { "type": "string", "default": "" },
+		"listBgGradient": { "type": "string", "default": "" },
+		"feaItemGap": { "type": "string", "default": "" },
+		"feaMiddleGap": { "type": "string", "default": "20" },
+		"feaConnector": { "type": "boolean", "default": false },
+		"feaConnectorLeft": { "type": "boolean", "default": false },
+		"feaConnectorType": { "type": "string", "default": "solid" },
+		"feaConnectorWidth": { "type": "string", "default": "" },
+		"feaConnectorPositionX": { "type": "string", "default": "" },
+		"feaConnectorRightPositionX": { "type": "string", "default": "" },
+		"feaConnectorColor": { "type": "string", "default": "" },
+		"feaListBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"feaListBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+		"feaListPadding": { "type": "object" },
+
+		"iconColor": { "type": "string", "default": "" },
+		"iconBgColor": { "type": "string", "default": "" },
+		"iconBgGradient": { "type": "string", "default": "" },
+		"iconSize": { "type": "string", "default": "" },
+		"iconBoxSize": { "type": "string", "default": "" },
+		"iconAlignment": { "type": "string", "default": "center" },
+		"iconShadow": { "type": "object", "default": { "x": 0, "y": 0, "b": 0, "s": 0, "c": "rgba(0, 0, 0, 0)" } },
+		"iconBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"iconRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+
+		"titleColor": { "type": "string", "default": "" },
+		"titleTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } },
+		"titlePadding": { "type": "object" },
+
+		"descColor": { "type": "string", "default": "" },
+		"descTypography": { "type": "object", "default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" } }
+	}
+}

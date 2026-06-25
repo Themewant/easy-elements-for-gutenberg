@@ -1,0 +1,9 @@
+/**
+ * Editor-only styles for the Button block.
+ */
+.eelfg-button-block-wrap {
+	.eelfg-button {
+		// Prevent the editor link-disabler from collapsing the button.
+		cursor: default;
+	}
+}
