@@ -1,0 +1,86 @@
+/**
+ * Progress Bar block — front-end + shared styles.
+ *
+ * Ported from the Elementor "Progress Bar" widget stylesheet
+ * (easy-elements/widgets/progress/css/progress.scss). The reference CSS targeted
+ * `.rt-progress-bar` while the markup used `.easyel-progress-bar` (a mismatch that
+ * left the base rules inert); here the classes use the "eelfg-" prefix and match
+ * the markup, scoped under `.eelfg-progress-bar-block-wrap`.
+ */
+.eelfg-progress-bar-block-wrap {
+	--eelfg-pb-primary: #ffd012;
+	--eelfg-pb-secondary: #0b3665;
+
+	/* Style 1 */
+	.eelfg-progress-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.eelfg-pb-title {
+			color: var(--eelfg-pb-secondary);
+			font-weight: 500;
+			margin: 0 0 15px;
+		}
+
+		.eelfg-pb-percent {
+			color: var(--eelfg-pb-secondary);
+			font-weight: 500;
+		}
+	}
+
+	.eelfg-progress {
+		height: 8px;
+		background: #f2f2f2;
+		overflow: hidden;
+		position: relative;
+
+		.eelfg-progress-fill {
+			width: 0%;
+			height: 100%;
+			background: var(--eelfg-pb-primary);
+			transition: width 1.5s ease;
+		}
+	}
+
+	/* Style 2 */
+	.eelfg-progress-style2 {
+		position: relative;
+
+		.eelfg-pb-title {
+			position: absolute;
+			margin: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 30px;
+			font-size: 16px;
+			text-transform: uppercase;
+			font-weight: 700;
+			line-height: 1;
+			color: var(--eelfg-pb-secondary);
+			z-index: 1;
+		}
+
+		.eelfg-progress {
+			height: 40px;
+			background: linear-gradient(90deg, #20282d29 0%, #f2f2f205 100%);
+			opacity: 1;
+			border-radius: 40px;
+			overflow: hidden;
+
+			.eelfg-progress-fill {
+				background: transparent;
+			}
+
+			.eelfg-pb-percent {
+				position: absolute;
+				right: 25px;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 16px;
+				color: var(--eelfg-pb-secondary);
+				font-weight: 700;
+			}
+		}
+	}
+}

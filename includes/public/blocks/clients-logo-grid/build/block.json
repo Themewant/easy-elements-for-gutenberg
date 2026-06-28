@@ -1,0 +1,195 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "easy-elements-for-gutenberg/clients-logo-grid",
+  "version": "0.1.0",
+  "title": "Client Logo Grid",
+  "category": "easy-elements-for-gutenberg",
+  "description": "A responsive grid of client / partner logos with links, grayscale and hover-swap effects.",
+  "keywords": [
+    "logo",
+    "clients",
+    "brand",
+    "partner",
+    "grid"
+  ],
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "padding": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "margin": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ]
+    }
+  },
+  "textdomain": "easy-elements-for-gutenberg",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "logos": {
+      "type": "array",
+      "default": [
+        {
+          "image": {},
+          "link": "",
+          "linkNewTab": false,
+          "linkNofollow": false
+        },
+        {
+          "image": {},
+          "link": "",
+          "linkNewTab": false,
+          "linkNofollow": false
+        },
+        {
+          "image": {},
+          "link": "",
+          "linkNewTab": false,
+          "linkNofollow": false
+        },
+        {
+          "image": {},
+          "link": "",
+          "linkNewTab": false,
+          "linkNofollow": false
+        }
+      ]
+    },
+    "imageWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "fetchpriority": {
+      "type": "string",
+      "default": "low"
+    },
+    "columns": {
+      "type": "string",
+      "default": "4"
+    },
+    "columnsTablet": {
+      "type": "string",
+      "default": "3"
+    },
+    "columnsMobile": {
+      "type": "string",
+      "default": "2"
+    },
+    "hoverSwap": {
+      "type": "boolean",
+      "default": false
+    },
+    "itemWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "itemHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "itemSpace": {
+      "type": "object"
+    },
+    "itemPadding": {
+      "type": "object"
+    },
+    "itemRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "itemBg": {
+      "type": "string",
+      "default": ""
+    },
+    "itemBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "itemBoxShadow": {
+      "type": "object",
+      "default": {
+        "x": 0,
+        "y": 0,
+        "b": 0,
+        "s": 0,
+        "c": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "itemOpacity": {
+      "type": "string",
+      "default": ""
+    },
+    "itemScale": {
+      "type": "string",
+      "default": ""
+    },
+    "grayscale": {
+      "type": "boolean",
+      "default": false
+    },
+    "grayscaleOption": {
+      "type": "string",
+      "default": "normal_grayscale"
+    },
+    "itemHoverBg": {
+      "type": "string",
+      "default": ""
+    },
+    "itemHoverBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "itemHoverBoxShadow": {
+      "type": "object",
+      "default": {
+        "x": 0,
+        "y": 0,
+        "b": 0,
+        "s": 0,
+        "c": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "itemHoverOpacity": {
+      "type": "string",
+      "default": ""
+    },
+    "itemHoverScale": {
+      "type": "string",
+      "default": ""
+    },
+    "transition": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

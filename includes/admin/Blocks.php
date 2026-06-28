@@ -126,7 +126,7 @@ class Blocks {
             [
                 'title'       => 'Counter',
                 'id'          => 'counter',
-                'description' => 'Animated number counter with prefix/suffix, icon, title and odometer mode.',
+                'description' => 'Animated number counter with prefix/suffix, icon, title and odometer.',
                 'iconName'    => 'list.svg',
                 'status'      => 'enable',
                 "isPro"       => false,
@@ -139,10 +139,98 @@ class Blocks {
                 'status'      => 'enable',
                 "isPro"       => false,
             ],
+            [
+                'title'       => 'Countdown',
+                'id'          => 'countdown',
+                'description' => 'Countdown timer to a target date with custom labels, separators and styling.',
+                'iconName'    => 'list.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Table',
+                'id'          => 'table',
+                'description' => 'Data table with header, body and footer cells, icons, images, tooltips and styling.',
+                'iconName'    => 'list.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Social Share',
+                'id'          => 'social-share',
+                'description' => 'Social share buttons for the current page with multiple platforms and layouts.',
+                'iconName'    => 'social-icons.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Social Icon',
+                'id'          => 'social-icon',
+                'description' => 'A row of linked social icons with per-icon or global colors and hover states.',
+                'iconName'    => 'social-icons.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Progress Bar',
+                'id'          => 'progress',
+                'description' => 'A progress / skill bar with title and percent, in two layout styles.',
+                'iconName'    => 'list.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Process Grid',
+                'id'          => 'process-grid',
+                'description' => 'A grid of process / service boxes with icon, title, description.',
+                'iconName'    => 'grid.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Process List',
+                'id'          => 'process-list',
+                'description' => 'A single process / step row with number, icon, title and description.',
+                'iconName'    => 'list.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Client Logo Grid',
+                'id'          => 'clients-logo-grid',
+                'description' => 'A responsive grid of client / partner logos with links and effects.',
+                'iconName'    => 'grid.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Image Comparison',
+                'id'          => 'image-comparison',
+                'description' => 'A before / after image comparison slider with a draggable handle.',
+                'iconName'    => 'grid.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Service List',
+                'id'          => 'service-list',
+                'description' => 'A service item with icon/image/number, title, description and — three skins.',
+                'iconName'    => 'list.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Scroll Top',
+                'id'          => 'scroll-to-top',
+                'description' => 'A floating scroll-to-top button that appears after scrolling.',
+                'iconName'    => 'button.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
         ];
 
         // Default-enabled IDs: any block we want available without the user toggling it on first.
-        $default_enabled = [ 'layout-row', 'column', 'post-grid', 'gallery', 'faq', 'pricing-table', 'button', 'icon-box', 'heading', 'team-grid', 'testimonials-grid', 'category-list', 'feature-list', 'counter', 'tab' ];
+        $default_enabled = [ 'layout-row', 'column', 'post-grid', 'gallery', 'faq', 'pricing-table', 'button', 'icon-box', 'heading', 'team-grid', 'testimonials-grid', 'category-list', 'feature-list', 'counter', 'tab', 'countdown', 'table', 'social-share', 'social-icon', 'progress', 'process-grid', 'process-list', 'clients-logo-grid', 'image-comparison', 'service-list', 'scroll-to-top' ];
 
         // Merge status from DB
         foreach ($blocks as &$block) {

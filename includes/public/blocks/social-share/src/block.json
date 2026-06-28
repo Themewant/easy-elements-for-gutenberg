@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "easy-elements-for-gutenberg/social-share",
+	"version": "0.1.0",
+	"title": "Social Share",
+	"category": "easy-elements-for-gutenberg",
+	"description": "Social share buttons for the current page — Facebook, X, LinkedIn, WhatsApp, copy link and more.",
+	"keywords": [ "social", "share", "icon", "link" ],
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"padding": [ "top", "bottom", "left", "right" ],
+			"margin": [ "top", "bottom", "left", "right" ]
+		}
+	},
+	"textdomain": "easy-elements-for-gutenberg",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"attributes": {
+		"blockId": { "type": "string", "default": "" },
+		"platforms": {
+			"type": "array",
+			"default": [
+				{ "platform": "facebook", "customIcon": "" },
+				{ "platform": "twitter", "customIcon": "" },
+				{ "platform": "instagram", "customIcon": "" },
+				{ "platform": "linkedin", "customIcon": "" },
+				{ "platform": "youtube", "customIcon": "" },
+				{ "platform": "whatsapp", "customIcon": "" },
+				{ "platform": "telegram", "customIcon": "" },
+				{ "platform": "copy", "customIcon": "" }
+			]
+		},
+		"layout": { "type": "string", "default": "horizontal" },
+		"openNewTab": { "type": "boolean", "default": true },
+
+		"iconSize": { "type": "string", "default": "18" },
+		"iconBgColor": { "type": "string", "default": "" },
+		"iconBgGradient": { "type": "string", "default": "" },
+		"iconColor": { "type": "string", "default": "" },
+		"buttonSize": { "type": "string", "default": "45" },
+		"buttonSpacing": { "type": "string", "default": "" },
+		"buttonRadius": { "type": "object", "default": { "top": "50%", "right": "50%", "bottom": "50%", "left": "50%" } },
+		"buttonBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"buttonBoxShadow": { "type": "object", "default": { "x": 0, "y": 0, "b": 0, "s": 0, "c": "rgba(0, 0, 0, 0)" } }
+	}
+}

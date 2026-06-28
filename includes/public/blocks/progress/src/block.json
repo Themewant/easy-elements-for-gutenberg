@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "easy-elements-for-gutenberg/progress",
+	"version": "0.1.0",
+	"title": "Progress Bar",
+	"category": "easy-elements-for-gutenberg",
+	"description": "A progress / skill bar with title and percent — two layout styles and full styling.",
+	"keywords": [ "progress", "bar", "skill", "percent", "meter" ],
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"padding": [ "top", "bottom", "left", "right" ],
+			"margin": [ "top", "bottom", "left", "right" ]
+		}
+	},
+	"textdomain": "easy-elements-for-gutenberg",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"attributes": {
+		"blockId": { "type": "string", "default": "" },
+		"selectStyle": { "type": "string", "default": "style1" },
+		"title": { "type": "string", "default": "Web Designer" },
+		"percent": { "type": "number", "default": 50 },
+
+		"progressColor": { "type": "string", "default": "" },
+		"progressBarColor": { "type": "string", "default": "" },
+		"style2BgColor": { "type": "string", "default": "" },
+		"style2BgGradient": { "type": "string", "default": "" },
+		"progressHeight": { "type": "string", "default": "" },
+		"progressRadius": { "type": "string", "default": "" },
+
+		"titleColor": { "type": "string", "default": "" },
+		"titleTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		},
+
+		"percentColor": { "type": "string", "default": "" },
+		"percentTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		}
+	}
+}

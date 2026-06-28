@@ -1,0 +1,88 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "easy-elements-for-gutenberg/countdown",
+	"version": "0.1.0",
+	"title": "Countdown",
+	"category": "easy-elements-for-gutenberg",
+	"description": "A countdown timer to a target date with days/hours/minutes/seconds, custom labels, separators and full styling.",
+	"keywords": [ "countdown", "timer", "schedule", "time", "date" ],
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"padding": [ "top", "bottom", "left", "right" ],
+			"margin": [ "top", "bottom", "left", "right" ]
+		}
+	},
+	"textdomain": "easy-elements-for-gutenberg",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"attributes": {
+		"blockId": { "type": "string", "default": "" },
+
+		"dayLabel": { "type": "string", "default": "Days" },
+		"hoursLabel": { "type": "string", "default": "Hours" },
+		"minuteLabel": { "type": "string", "default": "Minutes" },
+		"secondsLabel": { "type": "string", "default": "Seconds" },
+		"targetDate": { "type": "string", "default": "" },
+		"separator": { "type": "string", "default": "eelfg-cntdwn-space" },
+		"labelUnderNumber": { "type": "boolean", "default": false },
+		"contentAlign": { "type": "string", "default": "center" },
+
+		"midGap": { "type": "string", "default": "" },
+		"separatorPositionX": { "type": "string", "default": "" },
+		"separatorColor": { "type": "string", "default": "" },
+		"itemBgColor": { "type": "string", "default": "" },
+		"itemBorder": { "type": "object", "default": { "width": 0, "color": "", "style": "solid" } },
+		"itemBoxShadow": { "type": "object", "default": { "x": 0, "y": 0, "b": 0, "s": 0, "c": "rgba(0, 0, 0, 0)" } },
+		"itemBorderRadius": { "type": "object", "default": { "top": "", "right": "", "bottom": "", "left": "" } },
+		"itemPadding": { "type": "object" },
+
+		"daysTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		},
+		"daysColor": { "type": "string", "default": "" },
+		"daysLabelColor": { "type": "string", "default": "" },
+		"daysLabelTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		},
+
+		"hoursTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		},
+		"hoursColor": { "type": "string", "default": "" },
+		"hoursLabelColor": { "type": "string", "default": "" },
+		"hoursLabelTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		},
+
+		"minutesTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		},
+		"minutesColor": { "type": "string", "default": "" },
+		"minutesLabelColor": { "type": "string", "default": "" },
+		"minutesLabelTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		},
+
+		"secondsTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		},
+		"secondsColor": { "type": "string", "default": "" },
+		"secondsLabelColor": { "type": "string", "default": "" },
+		"secondsLabelTypography": {
+			"type": "object",
+			"default": { "fontFamily": "", "fontSize": "", "fontWeight": "", "fontStyle": "", "textTransform": "", "lineHeight": "", "letterSpacing": "" }
+		}
+	}
+}

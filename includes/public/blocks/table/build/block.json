@@ -1,0 +1,344 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "easy-elements-for-gutenberg/table",
+  "version": "0.1.0",
+  "title": "Table",
+  "category": "easy-elements-for-gutenberg",
+  "description": "A data table with header, body and footer cells — icons, images, tooltips, colspan/rowspan and full styling.",
+  "keywords": [
+    "table",
+    "data",
+    "grid",
+    "rows",
+    "columns"
+  ],
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "padding": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "margin": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ]
+    }
+  },
+  "textdomain": "easy-elements-for-gutenberg",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "tableHeader": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Table Header"
+        },
+        {
+          "text": "Table Header"
+        },
+        {
+          "text": "Table Header"
+        },
+        {
+          "text": "Table Header"
+        }
+      ]
+    },
+    "tableBody": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Table Data",
+          "type": "icon"
+        },
+        {
+          "text": "Table Data",
+          "type": "icon"
+        },
+        {
+          "text": "Table Data",
+          "type": "icon"
+        },
+        {
+          "text": "Table Data",
+          "type": "icon"
+        },
+        {
+          "text": "Table Data",
+          "type": "icon",
+          "row": true
+        },
+        {
+          "text": "Table Data",
+          "type": "icon"
+        },
+        {
+          "text": "Table Data",
+          "type": "icon"
+        },
+        {
+          "text": "Table Data",
+          "type": "icon"
+        }
+      ]
+    },
+    "tableFooter": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Table Footer"
+        },
+        {
+          "text": "Table Footer"
+        },
+        {
+          "text": "Table Footer"
+        },
+        {
+          "text": "Table Footer"
+        }
+      ]
+    },
+    "verticalAlignTable": {
+      "type": "string",
+      "default": ""
+    },
+    "tableMargin": {
+      "type": "object"
+    },
+    "tablePadding": {
+      "type": "object"
+    },
+    "tableBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "tableRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "headerAlign": {
+      "type": "string",
+      "default": ""
+    },
+    "headerTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headerBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headerTypography": {
+      "type": "object",
+      "default": {
+        "fontFamily": "",
+        "fontSize": "",
+        "fontWeight": "",
+        "fontStyle": "",
+        "textTransform": "",
+        "lineHeight": "",
+        "letterSpacing": ""
+      }
+    },
+    "headBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "theadRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "theadPadding": {
+      "type": "object"
+    },
+    "headerIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headerIconSize": {
+      "type": "string",
+      "default": ""
+    },
+    "headerIconYPos": {
+      "type": "string",
+      "default": ""
+    },
+    "headerIconMargin": {
+      "type": "object"
+    },
+    "bodyAlign": {
+      "type": "string",
+      "default": ""
+    },
+    "bodyTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "bodyBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "bodyTypography": {
+      "type": "object",
+      "default": {
+        "fontFamily": "",
+        "fontSize": "",
+        "fontWeight": "",
+        "fontStyle": "",
+        "textTransform": "",
+        "lineHeight": "",
+        "letterSpacing": ""
+      }
+    },
+    "stripedBg": {
+      "type": "boolean",
+      "default": false
+    },
+    "stripedBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "bodyIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "bodyIconSize": {
+      "type": "string",
+      "default": "16"
+    },
+    "bodyIconGap": {
+      "type": "object"
+    },
+    "tbodyRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "tbodyPadding": {
+      "type": "object"
+    },
+    "tbodyMargin": {
+      "type": "object"
+    },
+    "bodyBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    },
+    "tooltipIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tooltipIconSize": {
+      "type": "string",
+      "default": "16"
+    },
+    "tooltipIconMargin": {
+      "type": "object"
+    },
+    "tooltipAlign": {
+      "type": "string",
+      "default": "top"
+    },
+    "imgSize": {
+      "type": "string",
+      "default": ""
+    },
+    "imgRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "footerAlign": {
+      "type": "string",
+      "default": ""
+    },
+    "footerTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerTypography": {
+      "type": "object",
+      "default": {
+        "fontFamily": "",
+        "fontSize": "",
+        "fontWeight": "",
+        "fontStyle": "",
+        "textTransform": "",
+        "lineHeight": "",
+        "letterSpacing": ""
+      }
+    },
+    "tfootRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    },
+    "tfootPadding": {
+      "type": "object"
+    },
+    "footBorder": {
+      "type": "object",
+      "default": {
+        "width": 0,
+        "color": "",
+        "style": "solid"
+      }
+    }
+  }
+}

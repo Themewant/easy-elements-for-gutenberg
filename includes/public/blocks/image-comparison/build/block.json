@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "easy-elements-for-gutenberg/image-comparison",
+  "version": "0.1.0",
+  "title": "Image Comparison",
+  "category": "easy-elements-for-gutenberg",
+  "description": "A before / after image comparison slider with a draggable handle — horizontal or vertical.",
+  "keywords": [
+    "before",
+    "after",
+    "compare",
+    "comparison",
+    "slider"
+  ],
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "padding": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "margin": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ]
+    }
+  },
+  "textdomain": "easy-elements-for-gutenberg",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "beforeImage": {
+      "type": "object",
+      "default": {}
+    },
+    "afterImage": {
+      "type": "object",
+      "default": {}
+    },
+    "orientation": {
+      "type": "string",
+      "default": "horizontal"
+    },
+    "offset": {
+      "type": "number",
+      "default": 50
+    },
+    "height": {
+      "type": "string",
+      "default": "540"
+    },
+    "containerRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": ""
+      }
+    }
+  }
+}

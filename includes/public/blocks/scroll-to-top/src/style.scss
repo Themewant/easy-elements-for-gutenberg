@@ -1,0 +1,54 @@
+/**
+ * Scroll Top block — front-end + shared styles.
+ *
+ * Ported from the Elementor "Scroll Top" widget stylesheet
+ * (easy-elements/widgets/scroll-to-top/css/scroll.scss). Classes use the
+ * "eelfg-" prefix and everything is scoped under `.eelfg-scroll-top-block-wrap`.
+ */
+.eelfg-scroll-top-block-wrap {
+	--eelfg-stt-primary: #eaa638;
+
+	.eelfg-scroll-top {
+		position: fixed;
+		bottom: 0;
+		right: 28px;
+		z-index: 9999;
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		background: var(--eelfg-stt-primary);
+		border-radius: 100px;
+		color: #0b3665;
+		display: grid;
+		place-content: center;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(120px);
+		transition: all 0.5s ease 0s;
+		border: none;
+
+		svg {
+			height: 1em;
+			width: 1em;
+			fill: currentColor;
+		}
+	}
+
+	.eelfg-scroll-top.eelfg-scroll-visible {
+		transform: translateY(-20px);
+		opacity: 1;
+		visibility: visible;
+	}
+
+	/* Editor preview: show the button inline (not fixed) so it can be styled. */
+	.eelfg-scroll-top.eelfg-scroll-editor {
+		position: relative;
+		bottom: auto;
+		right: auto;
+		transform: none;
+		opacity: 1;
+		visibility: visible;
+		margin: 10px 0;
+	}
+}
