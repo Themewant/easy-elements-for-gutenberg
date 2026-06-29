@@ -43,6 +43,7 @@ class Main {
         new Extension\Video_Post();
 
         // Procedural files (define functions / run bootstrap code — not autoloadable).
+        require_once EELFG_PL_PATH . 'includes/admin/post-types.php';
         require_once EELFG_PL_PATH . 'includes/public/scripts.php';
         require_once EELFG_PL_PATH . 'includes/public/blocks/blocks.php';
     }

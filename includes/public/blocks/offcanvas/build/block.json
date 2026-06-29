@@ -1,0 +1,121 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "easy-elements-for-gutenberg/offcanvas",
+  "version": "0.1.0",
+  "title": "Offcanvas",
+  "category": "easy-elements-for-gutenberg",
+  "description": "A toggle button that opens an off-canvas panel rendering a selected Template — classic side or modern fullscreen.",
+  "keywords": [
+    "offcanvas",
+    "menu",
+    "drawer",
+    "sidebar",
+    "panel"
+  ],
+  "example": {},
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ]
+    }
+  },
+  "textdomain": "easy-elements-for-gutenberg",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "offcanvasLayout": {
+      "type": "string",
+      "default": "classic"
+    },
+    "menuText": {
+      "type": "string",
+      "default": "Menu"
+    },
+    "btnIcon": {
+      "type": "string",
+      "default": ""
+    },
+    "positionOffcanvas": {
+      "type": "string",
+      "default": "eelfg-offcanvas-right"
+    },
+    "offcanvasWidth": {
+      "type": "string",
+      "default": "380"
+    },
+    "contentTemplate": {
+      "type": "string",
+      "default": ""
+    },
+    "closeIcon": {
+      "type": "string",
+      "default": ""
+    },
+    "needBlur": {
+      "type": "boolean",
+      "default": false
+    },
+    "openerTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "openerTextTypography": {
+      "type": "object",
+      "default": {
+        "fontFamily": "",
+        "fontSize": "",
+        "fontWeight": "",
+        "fontStyle": "",
+        "textTransform": "",
+        "lineHeight": "",
+        "letterSpacing": ""
+      }
+    },
+    "openerIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "openerHamburgerColor": {
+      "type": "string",
+      "default": ""
+    },
+    "openerIconSize": {
+      "type": "string",
+      "default": ""
+    },
+    "openerIconSizeModern": {
+      "type": "string",
+      "default": ""
+    },
+    "closingIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "closingIconModernColor": {
+      "type": "string",
+      "default": ""
+    },
+    "closingIconSize": {
+      "type": "string",
+      "default": ""
+    },
+    "offcanvasBg": {
+      "type": "string",
+      "default": ""
+    },
+    "offcanvasPadding": {
+      "type": "object"
+    }
+  }
+}

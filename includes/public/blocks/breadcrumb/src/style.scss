@@ -1,0 +1,41 @@
+/**
+ * Breadcrumb block — front-end + shared styles.
+ *
+ * Ported from the Elementor "Breadcrumb" widget stylesheet
+ * (easy-elements/widgets/breadcrumb/css/breadcrumb.scss). Classes use the
+ * "eelfg-" prefix and everything is scoped under `.eelfg-breadcrumb-block-wrap`.
+ */
+.eelfg-breadcrumb-block-wrap {
+	--eelfg-bc-primary: #ffd012;
+	--eelfg-bc-secondary: #0b3665;
+
+	.eelfg-breadcrumb {
+		display: inline-block;
+	}
+
+	.eelfg-breadcrumb-path {
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		svg {
+			height: 1em;
+			width: 1em;
+		}
+	}
+
+	.eelfg-breadcrumb-separator {
+		display: inline-block;
+		margin: 0 6px;
+		font-weight: 400;
+		color: var(--eelfg-bc-secondary, #0b3665);
+		font-size: 1em;
+		vertical-align: middle;
+	}
+
+	.eelfg-breadcrumb-home-icon {
+		position: relative;
+		top: 1px;
+	}
+}

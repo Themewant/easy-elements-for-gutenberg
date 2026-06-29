@@ -227,10 +227,42 @@ class Blocks {
                 'status'      => 'enable',
                 "isPro"       => false,
             ],
+            [
+                'title'       => 'Offcanvas',
+                'id'          => 'offcanvas',
+                'description' => 'A toggle button that opens an off-canvas panel rendering a selected template.',
+                'iconName'    => 'button.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Search',
+                'id'          => 'search',
+                'description' => 'Site search with a popup lightbox skin or an inline search field skin.',
+                'iconName'    => 'button.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Login | Register',
+                'id'          => 'login-register',
+                'description' => 'AJAX login and registration forms with custom fields, captcha and styling.',
+                'iconName'    => 'button.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
+            [
+                'title'       => 'Breadcrumb',
+                'id'          => 'breadcrumb',
+                'description' => 'A dynamic breadcrumb trail for the current page.',
+                'iconName'    => 'list.svg',
+                'status'      => 'enable',
+                "isPro"       => false,
+            ],
         ];
 
         // Default-enabled IDs: any block we want available without the user toggling it on first.
-        $default_enabled = [ 'layout-row', 'column', 'post-grid', 'gallery', 'faq', 'pricing-table', 'button', 'icon-box', 'heading', 'team-grid', 'testimonials-grid', 'category-list', 'feature-list', 'counter', 'tab', 'countdown', 'table', 'social-share', 'social-icon', 'progress', 'process-grid', 'process-list', 'clients-logo-grid', 'image-comparison', 'service-list', 'scroll-to-top' ];
+        $default_enabled = [ 'layout-row', 'column', 'post-grid', 'gallery', 'faq', 'pricing-table', 'button', 'icon-box', 'heading', 'team-grid', 'testimonials-grid', 'category-list', 'feature-list', 'counter', 'tab', 'countdown', 'table', 'social-share', 'social-icon', 'progress', 'process-grid', 'process-list', 'clients-logo-grid', 'image-comparison', 'service-list', 'scroll-to-top', 'offcanvas', 'search', 'login-register', 'breadcrumb' ];
 
         // Merge status from DB
         foreach ($blocks as &$block) {

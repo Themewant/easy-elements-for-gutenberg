@@ -28,6 +28,10 @@
       "start:imageComparison": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/image-comparison/src --output-path=includes/public/blocks/image-comparison/build",
       "start:serviceList": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/service-list/src --output-path=includes/public/blocks/service-list/build",
       "start:scrollToTop": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/scroll-to-top/src --output-path=includes/public/blocks/scroll-to-top/build",
+      "start:offcanvas": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/offcanvas/src --output-path=includes/public/blocks/offcanvas/build",
+      "start:search": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/search/src --output-path=includes/public/blocks/search/build",
+      "start:loginRegister": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/login-register/src --output-path=includes/public/blocks/login-register/build",
+      "start:breadcrumb": "wp-scripts start --blocks-manifest --webpack-src-dir=includes/public/blocks/breadcrumb/src --output-path=includes/public/blocks/breadcrumb/build",
       "build": "wp-scripts build",
       "build:postGrid": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/post-grid/src --output-path=includes/public/blocks/post-grid/build",
       "build:row": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/layout-row/src --output-path=includes/public/blocks/layout-row/build",
@@ -54,7 +58,11 @@
       "build:clientsLogoGrid": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/clients-logo-grid/src --output-path=includes/public/blocks/clients-logo-grid/build",
       "build:imageComparison": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/image-comparison/src --output-path=includes/public/blocks/image-comparison/build",
       "build:serviceList": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/service-list/src --output-path=includes/public/blocks/service-list/build",
-      "build:scrollToTop": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/scroll-to-top/src --output-path=includes/public/blocks/scroll-to-top/build"
+      "build:scrollToTop": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/scroll-to-top/src --output-path=includes/public/blocks/scroll-to-top/build",
+      "build:offcanvas": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/offcanvas/src --output-path=includes/public/blocks/offcanvas/build",
+      "build:search": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/search/src --output-path=includes/public/blocks/search/build",
+      "build:loginRegister": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/login-register/src --output-path=includes/public/blocks/login-register/build",
+      "build:breadcrumb": "wp-scripts build --blocks-manifest --webpack-src-dir=includes/public/blocks/breadcrumb/src --output-path=includes/public/blocks/breadcrumb/build"
   },
   "devDependencies": {
     "@wordpress/scripts": "^32.4.0",

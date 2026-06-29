@@ -30,7 +30,6 @@ import {
 import BackgroundControl from '../../custom-components/BackgroundControl';
 import TypographyControls from '../../custom-components/TypographyControls';
 import ColorPopover from '../../custom-components/ColorPopover';
-import ImageRadioControl from '../../custom-components/ImageRadioControl';
 import ResponsiveWrapper from '../../custom-components/ResponsiveWrapper';
 import RangeControlWithUnit from '../../custom-components/RangeControlWithUnit';
 import TextAlignControl from '../../custom-components/TextAlignControl';
@@ -44,9 +43,6 @@ import IconPicker from '../../custom-components/IconPicker';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
-import layout1 from './assets/img/layout-1.png';
-import layout2 from './assets/img/layout-2.png';
-import layout3 from './assets/img/layout-3.png';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -244,14 +240,17 @@ export default function Edit({ attributes, setAttributes }) {
 
 
 				<PanelBody title={__('Layout', 'easy-elements-for-gutenberg')} initialOpen={false}>
-					<ImageRadioControl
+					<SelectControl
+						label={__('Layout', 'easy-elements-for-gutenberg')}
 						value={attributes.gridStyle}
-						onChange={(value) => setAttributes({ gridStyle: value })}
 						options={[
-							{ label: __('Default', 'easy-elements-for-gutenberg'), value: 'default', src: layout1 },
-							{ label: __('Style 1', 'easy-elements-for-gutenberg'), value: '1', src: layout2 },
-							{ label: __('Style 2', 'easy-elements-for-gutenberg'), value: '2', src: layout3, isPro: true },
+							{ label: __('Default', 'easy-elements-for-gutenberg'), value: 'default' },
+							{ label: __('Style 1', 'easy-elements-for-gutenberg'), value: '1' },
+							{ label: __('Style 2 (Pro)', 'easy-elements-for-gutenberg'), value: '2' },
 						]}
+						onChange={(value) => setAttributes({ gridStyle: value })}
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
 					/>
 				</PanelBody>
 

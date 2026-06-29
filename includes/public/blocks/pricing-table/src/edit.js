@@ -18,7 +18,6 @@ import IconPicker from '../../custom-components/IconPicker';
 import TypographyControls from '../../custom-components/TypographyControls';
 import BorderControl from '../../custom-components/BorderControl';
 import BoxShadowControls from '../../custom-components/BoxShadowControls';
-import ImageRadioControl from '../../custom-components/ImageRadioControl';
 
 import './editor.scss';
 
@@ -36,16 +35,6 @@ const ALIGN_OPTIONS = [
 	{ label: __('Left', 'easy-elements-for-gutenberg'), value: 'left' },
 	{ label: __('Center', 'easy-elements-for-gutenberg'), value: 'center' },
 	{ label: __('Right', 'easy-elements-for-gutenberg'), value: 'right' },
-];
-
-const svgDataUri = (svg) => `data:image/svg+xml,${encodeURIComponent(svg)}`;
-
-// Inline preview image for the skin picker (no asset files needed).
-const SKIN1_SVG =
-	"<svg xmlns='http://www.w3.org/2000/svg' width='80' height='92' viewBox='0 0 80 92'><rect x='2' y='2' width='76' height='88' rx='6' fill='#fff' stroke='#e0e0e0'/><rect x='14' y='12' width='30' height='6' rx='3' fill='#0b3665'/><rect x='14' y='24' width='24' height='11' rx='2' fill='#ffd012'/><rect x='14' y='44' width='52' height='4' rx='2' fill='#e6e6e6'/><rect x='14' y='52' width='52' height='4' rx='2' fill='#e6e6e6'/><rect x='14' y='60' width='52' height='4' rx='2' fill='#e6e6e6'/><rect x='14' y='72' width='52' height='11' rx='5' fill='#0b3665'/></svg>";
-
-const SKIN_OPTIONS = [
-	{ label: __('Skin 01', 'easy-elements-for-gutenberg'), value: 'skin1', src: svgDataUri(SKIN1_SVG) },
 ];
 
 export default function Edit({ attributes, setAttributes, clientId }) {
@@ -140,10 +129,15 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		<div {...useBlockProps()}>
 			<InspectorControls>
 				<PanelBody title={__('Layout', 'easy-elements-for-gutenberg')} initialOpen={true}>
-					<ImageRadioControl
+					<SelectControl
+						label={__('Skin', 'easy-elements-for-gutenberg')}
 						value={skinStyle}
-						options={SKIN_OPTIONS}
+						options={[
+							{ label: __('Skin 01', 'easy-elements-for-gutenberg'), value: 'skin1' },
+						]}
 						onChange={(v) => setAttributes({ skinStyle: v })}
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
 					/>
 				</PanelBody>
 
