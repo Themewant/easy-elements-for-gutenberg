@@ -204,7 +204,7 @@ export default function Blocks() {
                         title={block.title}
                         id={block.id}
                         description={block.description}
-                        icon={block.iconName}
+                        icon={block.iconClass}
                         onChangeHandler={() => updateBlockStatus(block.id, block.status)}
                         status={block.status}
                         isPro={block.isPro}

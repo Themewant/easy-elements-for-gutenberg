@@ -34,6 +34,8 @@ class EELFG_Login_Register {
 			return wp_send_json_error( [ 'msg' => 'You are already logged in.' ] );
 		}
 
+		// Nonce is verified above via $this->verify_nonce(); the sniff cannot trace cross-method verification.
+		// phpcs:disable WordPress.Security.NonceVerification.Missing
 		$user_login = ! empty( $_POST['user'] ) ? sanitize_user( wp_unslash( $_POST['user'] ) ) : '';
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
 		$user_pass  = ! empty( $_POST['pwd'] ) ? wp_unslash( $_POST['pwd'] ) : '';
@@ -44,6 +46,8 @@ class EELFG_Login_Register {
 			'user_password' => $user_pass,
 			'remember'      => $remember,
 		], is_ssl() );
+
+		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
 		if ( is_wp_error( $user ) ) {
 			return wp_send_json_error( [ 'msg' => 'Invalid username or password.' ] );
@@ -64,6 +68,8 @@ class EELFG_Login_Register {
 			return wp_send_json_error( [ 'msg' => 'User registration is currently disabled.' ] );
 		}
 
+		// Nonce is verified above via $this->verify_nonce(); the sniff cannot trace cross-method verification.
+		// phpcs:disable WordPress.Security.NonceVerification.Missing
 		$custom_meta = ! empty( $_POST['custom_meta'] )
 			? map_deep( wp_unslash( $_POST['custom_meta'] ), 'sanitize_text_field' )
 			: [];
@@ -128,6 +134,7 @@ class EELFG_Login_Register {
 				return wp_send_json_error( [ 'msg' => $captcha_error ] );
 			}
 		}
+		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
 		$user_data         = apply_filters( 'eelfg/login-register/new-user-data', $user_data );
 		$user_data['role'] = $default_role;

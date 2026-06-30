@@ -46,6 +46,8 @@ class Admin {
             return;
         }
 
+        wp_enqueue_style( 'eelfg-admin-icons', EELFG_PL_URL . 'includes/admin/assets/icons/css/eelfg-icon.css', array(), EELFG_VERSION );
+
         wp_enqueue_script(
             'eelfg-admin-js',
             EELFG_PL_URL . 'build/index.js',

@@ -86,7 +86,7 @@ export default function EasyElementsForGutenbergApp({ initialTab } = {}) {
                 <Layout style={{ minHeight: '100vh' }}>
                     <Sider theme="light" collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
                         <div className="eelfg-logo">
-                            <img src={eelfg.eelfgUrl + 'assets/images/icons/plugin-icon-200_200.svg'} alt="eelfg-logo" />
+                            <img src={eelfg.eelfgUrl + 'assets/images/icons/plugin-icon-200_200.png'} alt="eelfg-logo" />
                         </div>
                         <Menu
                             theme="light"

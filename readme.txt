@@ -12,16 +12,63 @@ Display posts beautifully with customizable grids, lists, sliders & category dis
 
 == Description ==
 
-[Easy Elements For Gutenberg](https://themewant.com/plugins/easy-elements-for-gutenberg/) is a modern Gutenberg post grid and layout plugin that helps you display blog posts in beautiful grids, lists, sliders, and category showcases. Perfect for blogs, news, magazine, and content-rich WordPress websites.
+Easy Elements For Gutenberg is a modern Gutenberg post grid and layout plugin that helps you display blog posts in beautiful grids, lists, sliders, and category showcases. Perfect for blogs, news, magazine, and content-rich WordPress websites.
 
 
-= Key Features =
+** 🌟 Key Features of Easy Elements **
 
-**🎨 Multiple Display Styles**
-* **Post Grid** - Display posts in responsive grid layouts with customizable columns
-* **Post List** - Show posts in elegant list format with featured images
-* **Post Slider** - Create beautiful post carousels with Swiper integration
-* **Category List** - Showcase your categories with post counts and descriptions
+### Lightweight and fast
+A lightweight and fast Gutenberg addon that adds powerful custom blocks.
+
+### Unique Gutenberg Blocks
+A fast and lightweight addon offering unique Gutenberg blocks for creative designs.
+
+### Clean, extendable code
+Unique Gutenberg blocks crafted with clean, extendable, developer-friendly code.
+
+### Elements Control Option
+Enable or disable individual elements to optimize performance. Turn off any blocks you don’t need to keep your pages fast, smooth, and lightweight.
+
+### Fully compatible with Gutenberg Free and Pro
+Fully compatible with both Gutenberg Free and Pro for a seamless building experience.
+
+
+### Ideal for developers and designers who want to save time and stay in control.
+
+
+Get access beautifully designed, high-impact blocks that elevate your Gutenberg design capabilities.
+
+1. Heading - Style Your Headings Beautifully with Easy Elements
+2. Button - Button Widget helps you create visually appealing buttons
+3. Clients Logo Grid - The Logo Grid plugin makes it easy to showcase client, sponsor, or partner logos
+4. Tab - Design stylish, eye-catching Tab effortlessly with Easy Elements
+5. Testimonials Grid - Create engaging testimonial grid blocks in WordPress to showcase client feedback beautifully.
+6. Info Box - Create stylish information boxes in WordPress using icons, links, and text.
+7. Team Grid - Showcase your team with style using the team widget.
+8. Contact Box - Build your contact box with Easy Elements
+9. Contact Form 7 - Build your Contact Form 7 Design with Easy Elements
+10. FAQ - Help visitors find answers instantly with a stylish FAQ section in WordPress.
+11. Post Grid - Create engaging post grid layouts in WordPress to showcase your latest articles, portfolio items, or news.
+12. Video - Showcase your video with Easy Elements
+13. Pricing Table - Create clean and modern pricing table with titles, descriptions, and prices.
+14. Service List - Create clean and modern service list with titles, descriptions and button.
+15. Social Share - Design beautiful info boxes from predefined styles
+16. Breadcrumb - Enhance navigation on your WordPress site with the breadcrumb widget.
+17. Simple Gallery - Visualize your workflow beautifully! Create sleek Simple Gallery in WordPress to highlight every step of your service or project journey with icons, titles, and smooth animations all with Easy Elements For Gutenberg.
+18. Social Icon - Boost visibility with quick, one-click social sharing.
+19. Offcanvas - Add modern off-canvas panels to your WordPress site for menus, sidebars, or extra content.
+20. Site Logo - You can show your site logo easily
+21. Simple Search - Add your site search anywhere
+22. Process Grid - Create clean and modern process grid with titles, descriptions and button.
+23. Process List - Create clean and modern process grid with titles, descriptions and button.
+24. Scroll Top - You can display a Scroll to Top button
+25. Table - Create clean and modern table with titles, descriptions, and prices.
+26. Counter - Create amazing Counter Up effects with Easy Elements For Gutenberg. Preview the Counter Up addon on this page.
+27. Countdown Timer - Create stunning Countdown timers with Easy Elements For Gutenberg. Preview the Countdown Timer addon on this page.
+28. Feature List - Create beautiful, icon-based feature lists for your website.
+29. Single Navigation Menu - With Easy One Page Navigation, navigating a one-page website becomes simple and seamless. It helps you build a visually engaging single-page design and ensures a better browsing experience for your visitors.
+30. Login / Register - Add stylish login and registration forms to your WordPress site with Easy Elements For Gutenberg.
+
 
 
 = Gutenberg Block Editor =
@@ -37,9 +84,9 @@ Built with performance in mind, Easy Elements For Gutenberg uses efficient queri
 If you like The Our Plugin, then consider checking out other WordPress Plugins:
 
 [Easy Hotel Booking](https://wordpress.org/plugins/easy-elements-for-gutenberg/) Powerful Hotel Booking Pluing
-[RT Mega Menu](https://wordpress.org/plugins/rt-mega-menu/) Advanced WordPress Mega Menu Builder for Elementor & Gutenberg
+[RT Mega Menu](https://wordpress.org/plugins/rt-mega-menu/) Advanced WordPress Mega Menu Builder for Gutenberg & Gutenberg
 [Easy Currency](https://wordpress.org/plugins/easy-currency/) Easy Currency Converter plugin for WooCommerce.
-[Easy Elements](https://wordpress.org/plugins/easy-elements/) Easy Elements for Elementor
+[Easy Elements](https://wordpress.org/plugins/easy-elements/) Easy Elements for Gutenberg
 [Easy Menu Iocns](https://wordpress.org/plugins/easy-menu-icons/) WordPress Menu Icon Plugin
 
 == Installation ==
@@ -74,28 +121,6 @@ Yes, Easy Elements For Gutenberg is fully translation ready and follows WordPres
 = Does it work with custom post types? =
 
 Currently, Easy Elements For Gutenberg is designed to work with standard WordPress posts. Custom post type support may be added in future versions.
-
-
-
-== Screenshots ==
-
-1. Post Grid block with multiple column layouts
-2. Post List block with featured images
-3. Post Slider with navigation controls
-4. Category List with post counts
-5. Block settings panel showing customization options
-6. Featured post meta box in post editor
-
-
-## Privacy Policy 
-
-Easy Elements For Gutenberg &#8211; Gutenberg Post Grid & Layout Blocks [Appsero](https://appsero.com) SDK to collect some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
-
-Appsero SDK **does not gather any data by default.** The SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users. 
-
-Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
-
-Learn more about how [Appsero collects and uses this data](https://appsero.com/privacy-policy/).
 
 
 == Changelog ==

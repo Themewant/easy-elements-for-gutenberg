@@ -3,7 +3,7 @@ body.toplevel_page_easy-elements-for-gutenberg #wpcontent {
 }
 
 .menu-top.toplevel_page_easy-elements-for-gutenberg .wp-menu-image img {
-  height: 17px;
+  height: 20px;
   opacity: 1 !important;
 }
 
@@ -48,6 +48,7 @@ body.toplevel_page_easy-elements-for-gutenberg #wpcontent {
   justify-content: space-between;
   background: #f1f2fa;
   padding: 8px 12px;
+  gap: 10px;
 }
 .eelfg-block-item .meta {
   display: flex;
@@ -66,10 +67,7 @@ body.toplevel_page_easy-elements-for-gutenberg #wpcontent {
   border-radius: 8px;
   position: relative;
   flex-direction: column;
-}
-.eelfg-block-item .icon img {
-  height: 30px;
-  width: 30px;
+  font-size: 22px;
 }
 .eelfg-block-item .icon .eelfg-block-badge {
   position: absolute;

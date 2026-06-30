@@ -18,7 +18,7 @@ export default function BlockItem(
                 <div className="meta">
                     <div className='icon'>
                         {isPro && <div className="eelfg-block-badge pro-badge">Pro</div>}
-                        <img src={eelfg.eelfgUrl + 'assets/images/icons/' + icon} alt="" />
+                        <i className={icon} ></i>
                     </div>
                     <div className='content'>
                         <strong>{title}</strong>
